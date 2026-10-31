@@ -1,0 +1,251 @@
+{
+ "page": "mdn",
+ "url": "https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch",
+ "page_type": "docs",
+ "sections": [
+  {
+   "text": "Skip to main content",
+   "component": "navigation",
+   "note": "skip links",
+   "alt": [
+    "ui_chrome"
+   ]
+  },
+  {
+   "text": "HTML: Markup language",
+   "component": "navigation",
+   "note": "top mega-menu"
+  },
+  {
+   "text": "Check out the video course from Scrimba, our partner",
+   "component": "promo_ad",
+   "note": "partner course promo inside Learn menu"
+  },
+  {
+   "text": "Web Web APIs Fetch API Using the Fetch API",
+   "component": "breadcrumb"
+  },
+  {
+   "text": "provides a JavaScript interface for making HTTP requests",
+   "component": "doc_header",
+   "note": "H1 'Using the Fetch API' + first summary sentence"
+  },
+  {
+   "text": "Fetch is the modern replacement for",
+   "component": "doc_prose",
+   "note": "intro para 2 (before first H2)"
+  },
+  {
+   "text": "which is available as a global function in both",
+   "component": "doc_prose",
+   "note": "intro para 3"
+  },
+  {
+   "text": "console.log(result);",
+   "component": "code_example",
+   "note": "minimal getData() example"
+  },
+  {
+   "text": "We declare a string containing the URL and then call",
+   "component": "doc_prose",
+   "note": "explanation after example"
+  },
+  {
+   "text": "In this article",
+   "component": "table_of_contents",
+   "note": "right-sidebar TOC"
+  },
+  {
+   "text": "which has a stringifier that produces a string containing the URL",
+   "component": "doc_prose",
+   "note": "Making a request: list of resource argument forms",
+   "alt": [
+    "parameter_list"
+   ]
+  },
+  {
+   "text": "makes a GET request, but you can use the",
+   "component": "doc_prose",
+   "note": "Setting the method"
+  },
+  {
+   "text": "The request body is the payload of the request",
+   "component": "doc_prose",
+   "note": "Setting a body"
+  },
+  {
+   "text": "// Automatically converted to \"username=example&password=password\"",
+   "component": "code_example",
+   "note": "URLSearchParams body example"
+  },
+  {
+   "text": "// Will throw: \"Body has already been consumed.\"",
+   "component": "code_example",
+   "note": "reusing a request body example"
+  },
+  {
+   "text": "Request headers give the server information about the request",
+   "component": "doc_prose",
+   "note": "Setting headers"
+  },
+  {
+   "text": "Many headers are set automatically by the browser and can't be set by a script",
+   "component": "doc_prose"
+  },
+  {
+   "text": "// GET request sent to https://example.org/login?username=example",
+   "component": "code_example",
+   "note": "Sending data in a GET request"
+  },
+  {
+   "text": "is determined by the value of the",
+   "component": "doc_prose",
+   "note": "Making cross-origin requests"
+  },
+  {
+   "text": "a credential is an extra piece of data sent along with the request",
+   "component": "doc_prose",
+   "note": "Including credentials"
+  },
+  {
+   "text": "never send credentials in the request or include credentials in the response.",
+   "component": "parameter_list",
+   "note": "values of the credentials option (omit/same-origin/include)",
+   "alt": [
+    "doc_prose",
+    "definition"
+   ]
+  },
+  {
+   "text": "Including credentials in cross-origin requests can make a site vulnerable",
+   "component": "doc_prose",
+   "note": "security caution written as plain prose, not a boxed note",
+   "alt": [
+    "callout_note"
+   ]
+  },
+  {
+   "text": "However, we could rewrite this to pass the same arguments to the",
+   "component": "doc_prose",
+   "note": "Creating a Request object"
+  },
+  {
+   "text": "To make a request cancelable, create an",
+   "component": "doc_prose",
+   "note": "Canceling a request"
+  },
+  {
+   "text": "console.log(\"Canceled fetch\");",
+   "component": "code_example",
+   "note": "AbortController example"
+  },
+  {
+   "text": "As soon as the browser has received the response status and headers",
+   "component": "doc_prose",
+   "note": "Handling the response"
+  },
+  {
+   "text": "will reject on some errors, such as a network error or a bad scheme",
+   "component": "doc_prose",
+   "note": "Checking response status"
+  },
+  {
+   "text": "the request was a cross-origin CORS request.",
+   "component": "parameter_list",
+   "note": "values of Response.type (basic/cors/opaque/opaqueredirect)",
+   "alt": [
+    "doc_prose",
+    "definition"
+   ]
+  },
+  {
+   "text": "throw new TypeError(\"Oops, we haven't got JSON!\");",
+   "component": "code_example",
+   "note": "Checking headers example"
+  },
+  {
+   "text": "provides a number of methods to retrieve the entire body contents",
+   "component": "doc_prose",
+   "note": "Reading the response body"
+  },
+  {
+   "text": "Request and response bodies are actually",
+   "component": "doc_prose",
+   "note": "Streaming the response body"
+  },
+  {
+   "text": "we iterate asynchronously over the stream, processing each chunk as it arrives",
+   "component": "doc_prose"
+  },
+  {
+   "text": "For simplicity, we assume the text is UTF-8, and don't handle fetch errors:",
+   "component": "doc_prose",
+   "note": "Processing a text file line by line"
+  },
+  {
+   "text": "yield chunk.substring(startIndex, result.index);",
+   "component": "code_example",
+   "note": "line iterator example"
+  },
+  {
+   "text": "The consequences of request and response bodies being streams are that:",
+   "component": "doc_prose",
+   "note": "Locked and disturbed streams"
+  },
+  {
+   "text": "const cache = await caches.open(\"MyCache_1\");",
+   "component": "code_example",
+   "note": "cacheFirst service-worker example"
+  },
+  {
+   "text": "Fetch examples on GitHub",
+   "component": "see_also",
+   "note": "See also list"
+  },
+  {
+   "text": "Help improve MDN",
+   "component": "ui_chrome",
+   "note": "feedback widget",
+   "alt": [
+    "call_to_action"
+   ]
+  },
+  {
+   "text": "This page was last modified on Aug 20, 2025 by MDN contributors",
+   "component": "footer",
+   "note": "article footer metadata",
+   "alt": [
+    "doc_header"
+   ]
+  },
+  {
+   "text": "Report a problem with this content",
+   "component": "footer",
+   "note": "article footer links",
+   "alt": [
+    "ui_chrome"
+   ]
+  },
+  {
+   "text": "Using Deferred Fetch",
+   "component": "navigation",
+   "note": "left sidebar (Fetch API guides/interfaces/methods)"
+  },
+  {
+   "text": "Your blueprint for a better internet.",
+   "component": "footer"
+  },
+  {
+   "text": "Community Participation Guidelines",
+   "component": "footer"
+  },
+  {
+   "text": "Portions of this content are ©1998–2026 by individual mozilla.org contributors.",
+   "component": "footer"
+  }
+ ],
+ "fields": {
+  "doc_header.title": "Using the Fetch API",
+  "doc_header.summary": "The Fetch API provides a JavaScript interface for making HTTP requests and processing the responses."
+ }
+}

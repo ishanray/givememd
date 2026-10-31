@@ -1,0 +1,166 @@
+{
+ "page": "nike_pdp",
+ "url": "https://www.nike.com/t/alphafly-4-mens-road-racing-shoes-EC33rkiZ/IU4686-002",
+ "page_type": "commerce",
+ "sections": [
+  {
+   "text": "Accessibility at Nike",
+   "component": "navigation",
+   "note": "top utility bar"
+  },
+  {
+   "text": "Send Us Feedback",
+   "component": "navigation",
+   "note": "Help dropdown menu"
+  },
+  {
+   "text": "Join Us Sign In",
+   "component": "login_prompt",
+   "note": "header join/sign-in links",
+   "alt": [
+    "navigation"
+   ]
+  },
+  {
+   "text": "New & Featured New Arrivals Best Sellers Latest Drops",
+   "component": "navigation",
+   "note": "main mega-menu"
+  },
+  {
+   "text": "Running Shoe Finder",
+   "component": "navigation",
+   "note": "Sport mega-menu"
+  },
+  {
+   "text": "Popular Search Terms",
+   "component": "search_box"
+  },
+  {
+   "text": "Nike Alphafly 4 Men's Road Racing Shoes",
+   "component": "product_header",
+   "note": "title + subtitle; price $280 follows"
+  },
+  {
+   "text": "This product is excluded from site promotions and discounts.",
+   "component": "price_offer",
+   "note": "pricing condition under price",
+   "alt": [
+    "promo_ad"
+   ]
+  },
+  {
+   "text": "Shown: Sea Glass/Laser Crimson/Phantom/Burgundy Ash",
+   "component": "spec_table",
+   "note": "colorway + style code shown (no live picker in HTML); repeated in details panel",
+   "alt": [
+    "variant_picker"
+   ]
+  },
+  {
+   "text": "Our legendary racer delivers more energy with less weight.",
+   "component": "product_description",
+   "note": "product-details panel (repeats title/price first)"
+  },
+  {
+   "text": "Advancements to our ZoomX foam deliver more bounce",
+   "component": "product_description"
+  },
+  {
+   "text": "Don't let them hear you coming.",
+   "component": "feature_bullets",
+   "note": "titled feature blurbs (Responsive Air Zoom Unit, Stable Flyplate, ...)",
+   "alt": [
+    "feature_grid",
+    "product_description"
+   ]
+  },
+  {
+   "text": "A wide carbon fiber Flyplate unlocks a propulsive sensation",
+   "component": "feature_bullets",
+   "alt": [
+    "feature_grid",
+    "product_description"
+   ]
+  },
+  {
+   "text": "An updated Atomknit upper features zones of open-hole mesh",
+   "component": "feature_bullets",
+   "alt": [
+    "feature_grid",
+    "product_description"
+   ]
+  },
+  {
+   "text": "Softer and quieter than previous models",
+   "component": "feature_bullets",
+   "note": "\"What's New?\" bullet list",
+   "alt": [
+    "key_takeaways"
+   ]
+  },
+  {
+   "text": "Weight: Approx. 188g/6.6oz (Men's US 8.5/Women's US 10)",
+   "component": "spec_table",
+   "note": "Product Details list"
+  },
+  {
+   "text": "Heel-to-toe drop: 8mm",
+   "component": "spec_table"
+  },
+  {
+   "text": "Free standard shipping on orders $50+ and free 60-day returns",
+   "component": "shipping_returns"
+  },
+  {
+   "text": "Pick-up available at select Nike Stores.",
+   "component": "shipping_returns"
+  },
+  {
+   "text": "No Reviews Nike Alphafly 4 $280",
+   "component": "review_summary",
+   "note": "empty reviews accordion (0 reviews)",
+   "alt": [
+    "ui_chrome"
+   ]
+  },
+  {
+   "text": "Gift Card Balance",
+   "component": "footer",
+   "note": "footer is rendered twice (mobile/desktop)"
+  },
+  {
+   "text": "First Responders & Medical Professionals",
+   "component": "footer",
+   "note": "footer promotions column; rendered twice"
+  },
+  {
+   "text": "© 2026 Nike, Inc. All Rights Reserved.",
+   "component": "footer"
+  },
+  {
+   "text": "Nike Air Force 1",
+   "component": "footer",
+   "note": "footer Guides link list",
+   "alt": [
+    "navigation"
+   ]
+  },
+  {
+   "text": "Your Privacy Choices",
+   "component": "footer"
+  },
+  {
+   "text": "Argentina Español Brasil Português Canada English",
+   "component": "footer",
+   "note": "country/language selector list",
+   "alt": [
+    "navigation"
+   ]
+  }
+ ],
+ "fields": {
+  "product_header.name": "Nike Alphafly 4",
+  "product_header.price": "$280",
+  "product_header.brand": "Nike"
+ }
+}

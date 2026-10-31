@@ -1,0 +1,147 @@
+{
+ "page": "linkedin",
+ "url": "https://www.linkedin.com/company/anthropic",
+ "page_type": "profile",
+ "sections": [
+  {
+   "text": "Skip to main content",
+   "component": "navigation",
+   "note": "skip link",
+   "alt": [
+    "ui_chrome"
+   ]
+  },
+  {
+   "text": "Top Content People Learning Jobs Games",
+   "component": "navigation"
+  },
+  {
+   "text": "Anthropic Venture Capital and Private Equity Principals Follow",
+   "component": "org_header",
+   "note": "top card: name + industry + Follow button. NB: this LinkedIn page is a VC fund named Anthropic, not the AI lab"
+  },
+  {
+   "text": "Discover all 19 employees",
+   "component": "org_header",
+   "note": "employee face-pile link in top card",
+   "alt": [
+    "people_list"
+   ]
+  },
+  {
+   "text": "Report this company",
+   "component": "ui_chrome",
+   "note": "item in hidden ellipsis dropdown"
+  },
+  {
+   "text": "privately held early stage investment fund operating across the US",
+   "component": "org_header",
+   "note": "'About us' description prose; no org-description component exists",
+   "alt": [
+    "article_body"
+   ]
+  },
+  {
+   "text": "Anthropic has tracked over a dozen up-rounds across its portfolio companies",
+   "component": "org_header",
+   "note": "About us prose continued",
+   "alt": [
+    "article_body"
+   ]
+  },
+  {
+   "text": "Anthropic | Human Oriented Early Stage Capital",
+   "component": "org_header",
+   "note": "tagline line in About section"
+  },
+  {
+   "text": "Website http://www.anthropic.io",
+   "component": "org_header",
+   "note": "About kv facts",
+   "alt": [
+    "contact_info"
+   ]
+  },
+  {
+   "text": "Company size 2-10 employees",
+   "component": "org_header",
+   "note": "About kv facts"
+  },
+  {
+   "text": "Type Partnership Founded 2012",
+   "component": "org_header",
+   "note": "About kv facts"
+  },
+  {
+   "text": "Employees at Anthropic Sourav karki Tarun Saluja",
+   "component": "people_list"
+  },
+  {
+   "text": "OpenAI Research Services San Francisco, CA",
+   "component": "recommendations",
+   "note": "'Similar pages' list of other companies"
+  },
+  {
+   "text": "NVIDIA Computer Hardware Manufacturing Santa Clara, CA",
+   "component": "recommendations",
+   "note": "'Similar pages' list"
+  },
+  {
+   "text": "Show more similar pages Show fewer similar pages",
+   "component": "ui_chrome"
+  },
+  {
+   "text": "Billing Specialist jobs 46,788 open jobs",
+   "component": "navigation",
+   "note": "'Browse jobs' SEO link list of job-search categories",
+   "alt": [
+    "recommendations"
+   ]
+  },
+  {
+   "text": "More searches Technical Recruiter jobs Python Developer jobs",
+   "component": "navigation",
+   "note": "'More searches' SEO link list",
+   "alt": [
+    "recommendations"
+   ]
+  },
+  {
+   "text": "LinkedIn © 2026 About Accessibility User Agreement",
+   "component": "footer"
+  },
+  {
+   "text": "Deutsch (German) Ελληνικά (Greek) English (English)",
+   "component": "footer",
+   "note": "language picker in footer",
+   "alt": [
+    "navigation"
+   ]
+  },
+  {
+   "text": "Agree & Join LinkedIn",
+   "component": "login_prompt",
+   "note": "hidden Google one-tap sign-up module"
+  },
+  {
+   "text": "Sign in to see who you already know at Anthropic",
+   "component": "login_prompt",
+   "note": "contextual sign-in modal"
+  },
+  {
+   "text": "Forgot password?",
+   "component": "login_prompt"
+  },
+  {
+   "text": "New to LinkedIn? Join now",
+   "component": "login_prompt"
+  }
+ ],
+ "fields": {
+  "org_header.name": "Anthropic",
+  "org_header.industry": "Venture Capital and Private Equity Principals",
+  "org_header.size": "2-10 employees",
+  "org_header.founded": "2012",
+  "org_header.website": "http://www.anthropic.io"
+ }
+}

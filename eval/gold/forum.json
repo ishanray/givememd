@@ -1,0 +1,144 @@
+{
+ "page": "forum",
+ "url": "https://discuss.python.org/t/making-performance-work-easier-in-cpython/109711",
+ "page_type": "community",
+ "sections": [
+  {
+   "text": "Discussions on Python.org",
+   "component": "navigation",
+   "note": "site header/logo link"
+  },
+  {
+   "text": "Making performance work easier in CPython",
+   "component": "thread_header"
+  },
+  {
+   "text": "Core Development",
+   "component": "breadcrumb",
+   "note": "topic category badge",
+   "alt": [
+    "navigation"
+   ]
+  },
+  {
+   "text": "October 27, 2026, 8:35pm",
+   "component": "thread_header",
+   "note": "OP author/date meta line",
+   "alt": [
+    "post_body"
+   ]
+  },
+  {
+   "text": "After chatting with folks at PyCon US, EuroPython and the sprint last week",
+   "component": "post_body"
+  },
+  {
+   "text": "For those unfamiliar, bench_runner is what we use to run pyperformance",
+   "component": "post_body",
+   "note": "under bold inline subheading 'Rehoming bench_runner'; still OP body"
+  },
+  {
+   "text": "This is a bigger and, I expect, more contentious topic",
+   "component": "post_body"
+  },
+  {
+   "text": "I think it would be valuable to have more recognizable macrobenchmarks: a modern",
+   "component": "post_body",
+   "note": "bulleted list inside OP"
+  },
+  {
+   "text": "There are a lot of times in PRs where we ask whether a change is worth it",
+   "component": "post_body"
+  },
+  {
+   "text": "Which workloads should we be paying more attention to?",
+   "component": "post_body",
+   "note": "closing question list of OP"
+  },
+  {
+   "text": "Yes, let’s do it.",
+   "component": "answer",
+   "note": "reply #2 (hugovk)"
+  },
+  {
+   "text": "Benchmarking can be tricky to do. Two common issues are binary layout noise",
+   "component": "answer",
+   "note": "reply #3"
+  },
+  {
+   "text": "Workloads: I think it would be valuable",
+   "component": "answer",
+   "note": "quoted OP text at top of reply #4; part of the reply",
+   "alt": [
+    "pull_quote"
+   ]
+  },
+  {
+   "text": "Microbenchmark can be quite sensitive.",
+   "component": "answer",
+   "note": "reply #4"
+  },
+  {
+   "text": "I would really like one command to re-generate any metric CPython tracks",
+   "component": "answer",
+   "note": "reply #5"
+  },
+  {
+   "text": "Thanks for putting together a plan, it’s a great start.",
+   "component": "answer",
+   "note": "reply #6"
+  },
+  {
+   "text": "Internally we skip concurrent_imap, unpack_sequence.",
+   "component": "answer",
+   "note": "reply #6 continued"
+  },
+  {
+   "text": "if possible, on a range of CPU architectures and a mix of old and new CPUs",
+   "component": "answer",
+   "note": "reply #7"
+  },
+  {
+   "text": "I was using a variant of this function to measure throughput for json libraries",
+   "component": "answer",
+   "note": "reply #8"
+  },
+  {
+   "text": "def autosize(func, make_obj, target_time=0.2, maxsize",
+   "component": "code_example",
+   "note": "code block inside reply #8",
+   "alt": [
+    "answer"
+   ]
+  },
+  {
+   "text": "Instead of increasing the iteration count like autorange()",
+   "component": "answer",
+   "note": "reply #8 text after code"
+  },
+  {
+   "text": "Maybe we could have a model similar to the buildbots",
+   "component": "answer",
+   "note": "reply #9 (OP)"
+  },
+  {
+   "text": "Happy to repurpose that machine for benchmarks.",
+   "component": "answer",
+   "note": "reply #10"
+  },
+  {
+   "text": "Home Categories Guidelines Terms of Service Privacy Policy",
+   "component": "footer"
+  },
+  {
+   "text": "best viewed with JavaScript enabled",
+   "component": "footer",
+   "note": "Powered by Discourse line"
+  }
+ ],
+ "fields": {
+  "thread_header.title": "Making performance work easier in CPython",
+  "thread_header.date": "October 27, 2026, 8:35pm",
+  "thread_header.votes": "20 Likes"
+ }
+}

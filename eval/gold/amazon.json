@@ -1,0 +1,245 @@
+{
+ "page": "amazon",
+ "url": "https://www.amazon.com/dp/B0D1XD1ZV3",
+ "page_type": "commerce",
+ "sections": [
+  {
+   "text": "Keyboard shortcuts Search opt + / Cart shift + opt + C",
+   "component": "ui_chrome",
+   "note": "accessibility shortcut overlay"
+  },
+  {
+   "text": "Delivering to Charlotte 28262 Update location",
+   "component": "navigation",
+   "note": "header location picker"
+  },
+  {
+   "text": "Select the department you want to search in",
+   "component": "search_box"
+  },
+  {
+   "text": "Hello, sign in Account & Lists Returns & Orders",
+   "component": "navigation",
+   "note": "header account links",
+   "alt": [
+    "login_prompt"
+   ]
+  },
+  {
+   "text": "Today's Deals Coupons Custom Products Whole Foods",
+   "component": "navigation"
+  },
+  {
+   "text": "Apple Products iPad Apple Watch AirPods Mac laptops",
+   "component": "navigation",
+   "note": "Apple store sub-nav"
+  },
+  {
+   "text": "Buy Used : $180.90",
+   "component": "price_offer",
+   "note": "used-condition buy-box offer (Amazon Resale), not the main product price"
+  },
+  {
+   "text": "FREE delivery Thursday, November 5 Or fastest delivery Tuesday",
+   "component": "shipping_returns"
+  },
+  {
+   "text": "Sold by Amazon Resale Fulfilled by Amazon",
+   "component": "seller_info",
+   "alt": [
+    "price_offer"
+   ]
+  },
+  {
+   "text": "Condition: Used: Acceptable Comment: No item damage observed",
+   "component": "price_offer",
+   "note": "offer condition"
+  },
+  {
+   "text": "Only 1 left in stock - order soon.",
+   "component": "stock_status"
+  },
+  {
+   "text": "Other sellers on Amazon New & Used (4) from $180.90",
+   "component": "price_offer"
+  },
+  {
+   "text": "Image not available for",
+   "component": "ui_chrome"
+  },
+  {
+   "text": "Apple AirPods Pro 2 Wireless Earbuds, Active Noise Cancellation, Hearing Aid",
+   "component": "product_header",
+   "note": "product title"
+  },
+  {
+   "text": "Visit the Apple Store",
+   "component": "product_header",
+   "note": "brand link under title"
+  },
+  {
+   "text": "bought in past month $180.90",
+   "component": "product_header",
+   "note": "main price in title block; snippet includes the adjacent \"200+ bought in past month\" line because the bare price string also occurs in the Other-sellers offer above"
+  },
+  {
+   "text": "Get a $50 Amazon Gift Card instantly upon approval for Amazon Visa",
+   "component": "promo_ad",
+   "note": "credit card promo directly under price"
+  },
+  {
+   "text": "FREE Returns Return this item for free",
+   "component": "shipping_returns"
+  },
+  {
+   "text": "Brief content visible, double tap to read full content.",
+   "component": "ui_chrome"
+  },
+  {
+   "text": "Style: Without AppleCare+",
+   "component": "variant_picker"
+  },
+  {
+   "text": "Brand Apple Color White Ear Placement In Ear",
+   "component": "spec_table",
+   "note": "short attribute table above bullets"
+  },
+  {
+   "text": "PIONEERING HEARING — AirPods Pro 2 unlock the world’s first",
+   "component": "feature_bullets",
+   "note": "\"About this item\" bullets"
+  },
+  {
+   "text": "LONG BATTERY LIFE — Get up to 6 hours of listening time",
+   "component": "feature_bullets"
+  },
+  {
+   "text": "Report an issue with this product or seller",
+   "component": "ui_chrome"
+  },
+  {
+   "text": "Check Compatibility",
+   "component": "ui_chrome",
+   "note": "interactive compatibility-checker widget; no content"
+  },
+  {
+   "text": "There is a newer version of this item:",
+   "component": "recommendations",
+   "note": "upsell to AirPods Pro 3 ($199.99)",
+   "alt": [
+    "promo_ad"
+   ]
+  },
+  {
+   "text": "Top Brand: Apple Highly Rated 100K+ customers rate items",
+   "component": "seller_info",
+   "note": "brand-trust badges; closest fit",
+   "alt": [
+    "promo_ad"
+   ]
+  },
+  {
+   "text": "Compare Apple AirPods DEVICE Viewing AirPods Pro",
+   "component": "product_comparison"
+  },
+  {
+   "text": "Custom high-excursion Apple driver",
+   "component": "spec_table",
+   "note": "manufacturer Technical Details block"
+  },
+  {
+   "text": "Height: 1.22 inches (30.9 mm)",
+   "component": "spec_table"
+  },
+  {
+   "text": "Compatibility iPhone Models",
+   "component": "spec_table",
+   "note": "device compatibility rows inside tech details",
+   "alt": [
+    "compat_table"
+   ]
+  },
+  {
+   "text": "In the Box AirPods Pro",
+   "component": "whats_in_box",
+   "note": "In the Box row inside tech details",
+   "alt": [
+    "spec_table"
+   ]
+  },
+  {
+   "text": "Product Dimensions ‎0.94 x 0.86 x 1.22 inches",
+   "component": "spec_table",
+   "note": "Product information table (contains U+200E marks)"
+  },
+  {
+   "text": "Product Warranty: For warranty information about this product",
+   "component": "shipping_returns",
+   "note": "warranty"
+  },
+  {
+   "text": "What's in the box Wireless Charging Case Cable",
+   "component": "whats_in_box"
+  },
+  {
+   "text": "47,072 global ratings",
+   "component": "review_summary"
+  },
+  {
+   "text": "To calculate the overall star rating and percentage breakdown",
+   "component": "ui_chrome",
+   "note": "how-ratings-work help text"
+  },
+  {
+   "text": "Customers praise the headphones' sound quality",
+   "component": "review_summary",
+   "note": "AI review summary"
+  },
+  {
+   "text": "5153 customers mention sound quality, 4335 positive",
+   "component": "review_summary",
+   "note": "review topic counts"
+  },
+  {
+   "text": "Customers love the sound quality",
+   "component": "review_summary",
+   "note": "per-topic drilldown with review excerpts",
+   "alt": [
+    "review_item"
+   ]
+  },
+  {
+   "text": "Customers have mixed experiences with how the earbuds sit",
+   "component": "review_summary",
+   "note": "per-topic drilldown (Fit)",
+   "alt": [
+    "review_item"
+   ]
+  },
+  {
+   "text": "Sign in to see customer reviews.",
+   "component": "login_prompt"
+  },
+  {
+   "text": "Your recently viewed items and featured recommendations",
+   "component": "recommendations"
+  },
+  {
+   "text": "Get to Know Us Careers Amazon Newsletter",
+   "component": "footer"
+  },
+  {
+   "text": "© 1996-2026, Amazon.com, Inc. or its affiliates",
+   "component": "footer"
+  }
+ ],
+ "fields": {
+  "product_header.name": "Apple AirPods Pro 2 Wireless Earbuds, Active Noise Cancellation, Hearing Aid Feature, Bluetooth Headphones, Transparency, Personalized Spatial Audio, High-Fidelity Sound, H2 Chip, USB-C Charging",
+  "product_header.brand": "Apple",
+  "product_header.price": "$180.90",
+  "product_header.rating": "4.6 out of 5 stars",
+  "product_header.rating_count": "47,072",
+  "stock_status.availability": "Only 1 left in stock - order soon.",
+  "price_offer.condition": "Used: Acceptable"
+ }
+}

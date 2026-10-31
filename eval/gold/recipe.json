@@ -1,0 +1,178 @@
+{
+ "page": "recipe",
+ "url": "https://www.bbcgoodfood.com/recipes/easy-chocolate-cake",
+ "page_type": "food_health",
+ "sections": [
+  {
+   "text": "Skip to main content",
+   "component": "navigation"
+  },
+  {
+   "text": "Halloween recipes",
+   "component": "navigation",
+   "note": "mega-menu"
+  },
+  {
+   "text": "Best induction pans",
+   "component": "navigation",
+   "note": "mega-menu, What to buy column"
+  },
+  {
+   "text": "Home Recipes Easy chocolate cake",
+   "component": "breadcrumb"
+  },
+  {
+   "text": "Serves 12 - 14 Easy Prep: 35 mins Cook: 20 mins",
+   "component": "recipe",
+   "note": "recipe header facts line (servings, difficulty, times)"
+  },
+  {
+   "text": "A star rating of 4.5 out of 5. 526 ratings Rate loading...",
+   "component": "recipe",
+   "note": "header rating; alt review_summary",
+   "alt": [
+    "review_summary"
+   ]
+  },
+  {
+   "text": "Master the chocolate cake with an airy, light sponge and rich buttercream",
+   "component": "recipe",
+   "note": "recipe standfirst/description inside the header; no recipe-description component",
+   "alt": [
+    "article_body"
+   ]
+  },
+  {
+   "text": "Freezable (sponges only)",
+   "component": "genre_tags",
+   "note": "diet/suitability tags in recipe header",
+   "alt": [
+    "recipe"
+   ]
+  },
+  {
+   "text": "Showing items 1 to 3 of 3",
+   "component": "recommendations",
+   "note": "tabbed carousel of other recipes"
+  },
+  {
+   "text": "Black forest arctic roll",
+   "component": "recommendations"
+  },
+  {
+   "text": "Pair chocolate cake with a few healthier dubai chocolate bites",
+   "component": "callout_note",
+   "note": "editorial serving tip linking another recipe",
+   "alt": [
+    "article_body",
+    "recommendations"
+   ]
+  },
+  {
+   "text": "Units: Metric US",
+   "component": "ui_chrome",
+   "note": "units toggle"
+  },
+  {
+   "text": "softened plus extra for the tins",
+   "component": "ingredients"
+  },
+  {
+   "text": "100g milk chocolate chopped",
+   "component": "ingredients"
+  },
+  {
+   "text": "For the chocolate shards (optional) 50g dark chocolate",
+   "component": "ingredients"
+  },
+  {
+   "text": "Keep the screen awake with cook mode on the Good Food app.",
+   "component": "login_prompt",
+   "note": "app download prompt"
+  },
+  {
+   "text": "Nutrition: Per serving (14)",
+   "component": "nutrition_facts"
+  },
+  {
+   "text": "Heat oven to 190C/170C fan/gas 5.",
+   "component": "instructions"
+  },
+  {
+   "text": "For the buttercream, put 100g chopped milk chocolate in a heatproof bowl",
+   "component": "instructions"
+  },
+  {
+   "text": "To make chocolate shards: melt 50g dark chocolate and pour it onto a tray",
+   "component": "instructions"
+  },
+  {
+   "text": "Try these next-level, indulgent chocolate cake ideas from our sister title",
+   "component": "related_articles",
+   "note": "cross-link to sister site",
+   "alt": [
+    "recommendations",
+    "promo_ad"
+   ]
+  },
+  {
+   "text": "Recipe from Good Food magazine, September 2017",
+   "component": "citations",
+   "note": "source/provenance credit; no attribution component",
+   "alt": [
+    "image_caption"
+   ]
+  },
+  {
+   "text": "What is your star rating out of 5?",
+   "component": "ui_chrome",
+   "note": "rating input widget; comment form with no comments shown",
+   "alt": [
+    "comment_list"
+   ]
+  },
+  {
+   "text": "Overall rating A star rating of 4.5 out of 5. 526 ratings",
+   "component": "review_summary"
+  },
+  {
+   "text": "Get 3 months of Good Food All Access for just £6",
+   "component": "promo_ad"
+  },
+  {
+   "text": "Subscribe now and get access to exclusive recipes, meal plans",
+   "component": "promo_ad",
+   "note": "app/subscription upsell",
+   "alt": [
+    "login_prompt"
+   ]
+  },
+  {
+   "text": "Our food team shares tips, techniques and their all-time favourite recipes",
+   "component": "promo_ad",
+   "note": "podcast promo"
+  },
+  {
+   "text": "Visit us on Instagram",
+   "component": "footer"
+  },
+  {
+   "text": "This website is owned and published by Immediate Media Company Limited.",
+   "component": "footer"
+  },
+  {
+   "text": "Bread, pastry & cakes",
+   "component": "navigation",
+   "note": "footer category link list",
+   "alt": [
+    "footer"
+   ]
+  }
+ ],
+ "fields": {
+  "recipe.name": "Easy chocolate cake",
+  "recipe.servings": "Serves 12 - 14",
+  "recipe.time": "Prep: 35 mins Cook: 20 mins",
+  "recipe.rating": "4.5 out of 5"
+ }
+}

@@ -1,0 +1,197 @@
+{
+ "page": "react",
+ "url": "https://react.dev/reference/react/useState",
+ "page_type": "docs",
+ "sections": [
+  {
+   "text": "Search ⌘ Ctrl K",
+   "component": "search_box"
+  },
+  {
+   "text": "Learn Reference Community Blog",
+   "component": "navigation",
+   "note": "top nav"
+  },
+  {
+   "text": "useActionState useCallback useContext useDebugValue",
+   "component": "navigation",
+   "note": "left sidebar"
+  },
+  {
+   "text": "renderToPipeableStream renderToReadableStream",
+   "component": "navigation",
+   "note": "left sidebar"
+  },
+  {
+   "text": "API Reference Hooks",
+   "component": "breadcrumb"
+  },
+  {
+   "text": "useState is a React Hook that lets you add a state variable to your component.",
+   "component": "doc_header",
+   "note": "title + one-line summary"
+  },
+  {
+   "text": "const [ state , setState ] = useState ( initialState )",
+   "component": "api_signature"
+  },
+  {
+   "text": "Usage Adding state to a component Updating state based on the previous state",
+   "component": "table_of_contents",
+   "note": "inline TOC under the intro (same list repeats in 'On this page')"
+  },
+  {
+   "text": "Call useState at the top level of your component to declare a state variable.",
+   "component": "doc_prose",
+   "note": "Reference > useState(initialState)"
+  },
+  {
+   "text": "const [ age , setAge ] = useState ( 28 ) ;",
+   "component": "code_example"
+  },
+  {
+   "text": "The value you want the state to be initially.",
+   "component": "parameter_list"
+  },
+  {
+   "text": "useState returns an array with exactly two values:",
+   "component": "return_value"
+  },
+  {
+   "text": "In Strict Mode, React will call your initializer function twice",
+   "component": "doc_prose",
+   "note": "Caveats bullet list; closest generic",
+   "alt": [
+    "callout_note"
+   ]
+  },
+  {
+   "text": "The set function returned by useState lets you update the state",
+   "component": "doc_prose",
+   "note": "set function reference intro"
+  },
+  {
+   "text": "const [ name , setName ] = useState ( 'Edward' ) ;",
+   "component": "code_example"
+  },
+  {
+   "text": "The value that you want the state to be. It can be a value",
+   "component": "parameter_list"
+  },
+  {
+   "text": "set functions do not have a return value.",
+   "component": "return_value"
+  },
+  {
+   "text": "React batches state updates. It updates the screen after all the event handlers",
+   "component": "doc_prose",
+   "note": "set function Caveats",
+   "alt": [
+    "callout_note"
+   ]
+  },
+  {
+   "text": "Call useState at the top level of your component to declare one or more state",
+   "component": "doc_prose",
+   "note": "Usage > Adding state"
+  },
+  {
+   "text": "does not change the current state in the already executing code",
+   "component": "callout_note",
+   "note": "Pitfall box"
+  },
+  {
+   "text": "1 . Counter (number) 2 . Text field (string) 3 . Checkbox (boolean)",
+   "component": "navigation",
+   "note": "example tab switcher",
+   "alt": [
+    "ui_chrome"
+   ]
+  },
+  {
+   "text": "In this example, the count state variable holds a number.",
+   "component": "doc_prose"
+  },
+  {
+   "text": "App.js App.js Reload Clear Fork",
+   "component": "ui_chrome",
+   "note": "sandbox toolbar; repeats per sandbox"
+  },
+  {
+   "text": "You pressed me { count } times",
+   "component": "code_example",
+   "note": "sandbox code"
+  },
+  {
+   "text": "This handler calls setAge(age + 1) three times:",
+   "component": "doc_prose"
+  },
+  {
+   "text": "Here, a => a + 1 is your updater function.",
+   "component": "doc_prose"
+  },
+  {
+   "text": "You might hear a recommendation to always write code like setAge(a => a + 1)",
+   "component": "callout_note",
+   "note": "Deep Dive box",
+   "alt": [
+    "doc_prose"
+   ]
+  },
+  {
+   "text": "In React, state is considered read-only, so you should replace it",
+   "component": "doc_prose"
+  },
+  {
+   "text": "// 🚩 Don't mutate an object in state like this:",
+   "component": "code_example"
+  },
+  {
+   "text": "React saves the initial state once and ignores it on the next renders.",
+   "component": "doc_prose"
+  },
+  {
+   "text": "You can reset a component’s state by passing a different key to a component.",
+   "component": "doc_prose"
+  },
+  {
+   "text": "in rare cases you might want to adjust state in response to rendering",
+   "component": "doc_prose"
+  },
+  {
+   "text": "This is because states behaves like a snapshot.",
+   "component": "doc_prose",
+   "note": "Troubleshooting entries are question-headed doc sections; labeled doc_prose"
+  },
+  {
+   "text": "// 🚩 Wrong: calls the handler during render",
+   "component": "code_example"
+  },
+  {
+   "text": "To actually store a function, you have to put () => before them in both cases.",
+   "component": "doc_prose"
+  },
+  {
+   "text": "Previous useRef Next useSyncExternalStore",
+   "component": "navigation",
+   "note": "prev/next page links"
+  },
+  {
+   "text": "Copyright © Meta Platforms, Inc",
+   "component": "footer"
+  },
+  {
+   "text": "Learn React Quick Start Installation Describing the UI",
+   "component": "footer"
+  },
+  {
+   "text": "On this page Overview Reference useState(initialState)",
+   "component": "table_of_contents"
+  }
+ ],
+ "fields": {
+  "doc_header.title": "useState",
+  "doc_header.summary": "useState is a React Hook that lets you add a state variable to your component.",
+  "api_signature.signature": "const [ state , setState ] = useState ( initialState )"
+ }
+}

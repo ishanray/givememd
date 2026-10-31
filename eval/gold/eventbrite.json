@@ -1,0 +1,169 @@
+{
+ "page": "eventbrite",
+ "url": "https://www.eventbrite.com/d/tx--austin/events/",
+ "page_type": "listings",
+ "sections": [
+  {
+   "text": "Your version of Internet Explorer is not longer supported.",
+   "component": "ui_chrome",
+   "note": "browser-upgrade banner"
+  },
+  {
+   "text": "Find your tickets Contact your event organizer",
+   "component": "navigation",
+   "note": "header Help Center menu"
+  },
+  {
+   "text": "Choose a location autocomplete",
+   "component": "search_box"
+  },
+  {
+   "text": "Home / United States / Things to do in Austin / Events in Austin",
+   "component": "breadcrumb"
+  },
+  {
+   "text": "Events and things to do in Austin, TX reflect the city's identity",
+   "component": "article_body",
+   "note": "city-guide intro prose under h1 'Best events in Austin'; no listing-intro component",
+   "alt": [
+    "encyclopedia_section"
+   ]
+  },
+  {
+   "text": "Experience stand-up at dedicated venues such as The Comedy Mothership",
+   "component": "article_body",
+   "note": "intro prose continued",
+   "alt": [
+    "encyclopedia_section"
+   ]
+  },
+  {
+   "text": "Halloween Party Tomorrow • 9:00 PM Fairmont Austin Hotel",
+   "component": "event_card",
+   "note": "'After 8pm' carousel card 1 (every carousel is rendered twice in the DOM; the same card also reappears in later carousels)",
+   "alt": [
+    "listing_card"
+   ]
+  },
+  {
+   "text": "Lonelyland Mon, Nov 16 • 8:30 PM Saxon Pub 2026",
+   "component": "event_card",
+   "note": "'After 8pm' carousel card",
+   "alt": [
+    "listing_card"
+   ]
+  },
+  {
+   "text": "Save this event: Lonelyland Share this event: Lonelyland",
+   "component": "share_buttons",
+   "note": "per-card save/share buttons"
+  },
+  {
+   "text": "From $0.00 MLOps World 1.5k followers Promoted",
+   "component": "promo_ad",
+   "note": "promoted (sponsored) event card in 'Popular in Austin'",
+   "alt": [
+    "event_card"
+   ]
+  },
+  {
+   "text": "Julio Torres - The Perfect Gift Thu, Nov 5 • 6:00 PM BookPeople",
+   "component": "event_card",
+   "note": "'Popular in Austin' card",
+   "alt": [
+    "listing_card"
+   ]
+  },
+  {
+   "text": "Food Glorious Food: How We Will Beat Hunger Fri, Nov 13 • 5:30 PM Welch Hall",
+   "component": "event_card",
+   "note": "'Popular in Austin' card",
+   "alt": [
+    "listing_card"
+   ]
+  },
+  {
+   "text": "OUTSIDER ART: Drawing The Spirit World Today • 6:30 PM GMT",
+   "component": "event_card",
+   "note": "'Online Events' carousel card",
+   "alt": [
+    "listing_card"
+   ]
+  },
+  {
+   "text": "The MI5 Archive: Official Secrets Fri, Nov 27 • 2:00 PM GMT",
+   "component": "event_card",
+   "note": "'Online Events' carousel card",
+   "alt": [
+    "listing_card"
+   ]
+  },
+  {
+   "text": "Sophia Bush - And I Will Tell You Mine Today • 7:00 PM First Baptist Church",
+   "component": "event_card",
+   "note": "'This Weekend' carousel card",
+   "alt": [
+    "listing_card"
+   ]
+  },
+  {
+   "text": "Make & Take: Tamales Sunday • 12:00 PM Central Market Austin North Lamar",
+   "component": "event_card",
+   "note": "'This Weekend' carousel card",
+   "alt": [
+    "listing_card"
+   ]
+  },
+  {
+   "text": "Points of Interest near Austin Mount Bonnell Texas Capitol",
+   "component": "navigation",
+   "note": "SEO link list of local places",
+   "alt": [
+    "recommendations"
+   ]
+  },
+  {
+   "text": "Where are the best places for live music events in Austin?",
+   "component": "faq"
+  },
+  {
+   "text": "This area features a high concentration of venues hosting local and touring",
+   "component": "faq",
+   "note": "FAQ answer text"
+  },
+  {
+   "text": "Does Austin host any popular outdoor art events?",
+   "component": "faq"
+  },
+  {
+   "text": "Site Navigation Use Eventbrite Create Events Pricing",
+   "component": "footer"
+  },
+  {
+   "text": "New Orleans Food & Drink Events San Francisco Holiday Events",
+   "component": "footer",
+   "note": "footer 'Find Events' city links",
+   "alt": [
+    "navigation"
+   ]
+  },
+  {
+   "text": "Contact Support Contact Sales Product Updates",
+   "component": "footer"
+  },
+  {
+   "text": "© 2026 Eventbrite How It Works Pricing",
+   "component": "footer"
+  },
+  {
+   "text": "Locale United States Argentina Australia",
+   "component": "footer",
+   "note": "locale picker"
+  }
+ ],
+ "fields": {
+  "event_card.name": "Haunted Rooftop | Austin Halloween Party",
+  "event_card.date": "Tomorrow • 9:00 PM",
+  "event_card.venue": "Fairmont Austin Hotel"
+ }
+}

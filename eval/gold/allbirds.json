@@ -1,0 +1,239 @@
+{
+ "page": "allbirds",
+ "url": "https://www.allbirds.com/products/mens-tree-runners",
+ "page_type": "commerce",
+ "sections": [
+  {
+   "text": "Free ground shipping on orders over $100",
+   "component": "promo_ad",
+   "note": "site-wide announcement bar",
+   "alt": [
+    "shipping_returns"
+   ]
+  },
+  {
+   "text": "Due to increased demand, orders may take up to 30 days to ship.",
+   "component": "shipping_returns",
+   "note": "announcement bar about shipping delay",
+   "alt": [
+    "promo_ad"
+   ]
+  },
+  {
+   "text": "Skip to Content New Arrivals Shop All Men Women",
+   "component": "navigation"
+  },
+  {
+   "text": "Search Allbirds",
+   "component": "search_box"
+  },
+  {
+   "text": "Spend more to earn free shipping! Shipping $5.00 Subtotal",
+   "component": "ui_chrome",
+   "note": "empty cart drawer"
+  },
+  {
+   "text": "Home / mens / Men",
+   "component": "breadcrumb"
+  },
+  {
+   "text": "Final Sale items cannot be returned, canceled, or exchanged",
+   "component": "shipping_returns",
+   "note": "final-sale return terms under price; appears 4x (2 per mobile/desktop copy), identical label"
+  },
+  {
+   "text": "Previous Image Next Image",
+   "component": "ui_chrome",
+   "note": "gallery controls"
+  },
+  {
+   "text": "Image Men's Tree Runner Also available in: Women's Sizes $100",
+   "component": "product_header",
+   "note": "title + price (desktop copy; leading \"Image\" is the gallery button, needed for uniqueness)"
+  },
+  {
+   "text": "Sale Color: ( edition)",
+   "component": "variant_picker",
+   "note": "color label (empty value in cached HTML)"
+  },
+  {
+   "text": "Men's Sizes Women's Sizes 8 9 10 11 12 13 14",
+   "component": "variant_picker",
+   "note": "size buttons"
+  },
+  {
+   "text": "We recommend sizing up from your usual size for the best fit. Fit Guide",
+   "component": "size_guide",
+   "note": "fit guidance next to size picker"
+  },
+  {
+   "text": "Out of stock Notify Me",
+   "component": "stock_status"
+  },
+  {
+   "text": "Free Shipping on Orders over $100",
+   "component": "shipping_returns"
+  },
+  {
+   "text": "Once limited edition colors sell out",
+   "component": "newsletter_signup",
+   "note": "back-in-stock / email signup form",
+   "alt": [
+    "login_prompt"
+   ]
+  },
+  {
+   "text": "Oops! Something went wrong. Please try again.",
+   "component": "ui_chrome"
+  },
+  {
+   "text": "A breezier take on our original Wool Runner",
+   "component": "product_description",
+   "note": "\"WHY WE LOVE THIS\"; page repeats this block twice (mobile md:hidden + desktop copy); identical label for both, snippet hits the first"
+  },
+  {
+   "text": "Sugarcane-based SweetFoam® cushioning with responsive energy return",
+   "component": "feature_bullets",
+   "note": "\"Thoughtfully designed\" bullets; page repeats this block twice (mobile md:hidden + desktop copy); identical label for both, snippet hits the first"
+  },
+  {
+   "text": "Weight: 8.6oz (M9), 7.3oz (W7)",
+   "component": "spec_table",
+   "note": "page repeats this block twice (mobile md:hidden + desktop copy); identical label for both, snippet hits the first"
+  },
+  {
+   "text": "Knit upper made from eucalyptus-derived TENCEL™ Lyocell",
+   "component": "spec_table",
+   "note": "\"Materials & Sustainability\" part->material pairs; page repeats this block twice (mobile md:hidden + desktop copy); identical label for both, snippet hits the first",
+   "alt": [
+    "product_description"
+   ]
+  },
+  {
+   "text": "Remove the insoles, hand wash those separately",
+   "component": "product_description",
+   "note": "care instructions; no care component; page repeats this block twice (mobile md:hidden + desktop copy); identical label for both, snippet hits the first",
+   "alt": [
+    "spec_table"
+   ]
+  },
+  {
+   "text": "Compare our styles SIDE TOP BACK SOLE",
+   "component": "product_comparison"
+  },
+  {
+   "text": "Structured + Supportive. Refined and roomier",
+   "component": "product_comparison",
+   "note": "second column (Tree Runner NZ)"
+  },
+  {
+   "text": "Our Tree Knit is naturally airy and pleasantly cool.",
+   "component": "feature_grid",
+   "note": "BREATHABLE/LIGHTWEIGHT/SUPPORTIVE callouts; page repeats this block twice (mobile md:hidden + desktop copy); identical label for both, snippet hits the first",
+   "alt": [
+    "feature_bullets"
+   ]
+  },
+  {
+   "text": "Almost immediately after slipping on the Allbirds Tree Runners",
+   "component": "testimonial",
+   "note": "press quote (Condé Nast Traveler)",
+   "alt": [
+    "pull_quote"
+   ]
+  },
+  {
+   "text": "You May Also Like NEW Men's Varsity Parchment $120",
+   "component": "recommendations"
+  },
+  {
+   "text": "Men's Cruiser Blizzard $105",
+   "component": "recommendations"
+  },
+  {
+   "text": "Reviews for Men's Tree Runner",
+   "component": "ui_chrome",
+   "note": "reviews heading over an empty, JS-loaded widget; no review content in HTML",
+   "alt": [
+    "review_summary"
+   ]
+  },
+  {
+   "text": "Looking to the world's greatest innovator - Nature",
+   "component": "promo_ad",
+   "note": "brand-mission banner (Better Things in a Better Way / Learn More)",
+   "alt": [
+    "hero"
+   ]
+  },
+  {
+   "text": "Average Width Average Length US 8 9 10",
+   "component": "size_guide",
+   "note": "size chart (US/UK/cm) in fit-guide panel"
+  },
+  {
+   "text": "Lightweight, bouncy, and wildly comfortable",
+   "component": "feature_grid",
+   "note": "brand value-prop tiles above footer",
+   "alt": [
+    "promo_ad"
+   ]
+  },
+  {
+   "text": "Subscribe to our emails Sign Up",
+   "component": "newsletter_signup"
+  },
+  {
+   "text": "help@allbirds.com FAQ/Contact Us Returns/Exchanges",
+   "component": "footer"
+  },
+  {
+   "text": "©AB DNAM LLC 2026 . All Rights Reserved",
+   "component": "footer"
+  },
+  {
+   "text": "Our standard return policy is 30 days.",
+   "component": "shipping_returns",
+   "note": "Refund policy text in closed footer modal",
+   "alt": [
+    "footer"
+   ]
+  },
+  {
+   "text": "doing business as Allbirds (together with its affiliates",
+   "component": "footer",
+   "note": "Privacy policy full text in closed modal (~40k chars); no legal-text component"
+  },
+  {
+   "text": "Welcome to Allbirds, operated by AB Dnam, LLC",
+   "component": "footer",
+   "note": "Terms of service full text in closed modal"
+  },
+  {
+   "text": "ALL ORDERS ARE PROCESSED WITHIN 1-6 BUSINESS DAYS.",
+   "component": "shipping_returns",
+   "note": "Shipping policy text in closed footer modal",
+   "alt": [
+    "footer"
+   ]
+  },
+  {
+   "text": "Cookie preferences Do Not Sell My Personal Information",
+   "component": "cookie_banner"
+  },
+  {
+   "text": "Where are we shipping to? US Purchasing from your country",
+   "component": "ui_chrome",
+   "note": "country selector modal",
+   "alt": [
+    "navigation"
+   ]
+  }
+ ],
+ "fields": {
+  "product_header.name": "Men's Tree Runner",
+  "product_header.price": "$100",
+  "stock_status.availability": "Out of stock",
+  "variant_picker.values": "8 9 10 11 12 13 14"
+ }
+}

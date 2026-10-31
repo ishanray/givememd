@@ -1,0 +1,288 @@
+{
+ "page": "github",
+ "url": "https://github.com/microsoft/markitdown",
+ "page_type": "docs",
+ "sections": [
+  {
+   "text": "Repository hosting, code review, and collaboration",
+   "component": "navigation",
+   "note": "global header mega-menu"
+  },
+  {
+   "text": "You signed in with another tab or window.",
+   "component": "ui_chrome",
+   "note": "session alert text"
+  },
+  {
+   "text": "Security and quality",
+   "component": "navigation",
+   "note": "repo tabs (Code/Issues/PRs/...)"
+  },
+  {
+   "text": "You must be signed in to change notification settings",
+   "component": "login_prompt"
+  },
+  {
+   "text": "You must be signed in to star a repository",
+   "component": "login_prompt"
+  },
+  {
+   "text": "Python tool for converting files and office documents to Markdown.",
+   "component": "repo_header",
+   "note": "About box: description; About sidebar is duplicated in DOM (narrow + wide layouts), so snippets occur 2x"
+  },
+  {
+   "text": "autogen-extension",
+   "component": "genre_tags",
+   "note": "repo topics; no tags component outside media",
+   "alt": [
+    "repo_header",
+    "skills_list"
+   ]
+  },
+  {
+   "text": "Watchers 588 watching",
+   "component": "repo_header",
+   "note": "About stats (stars/watchers/forks); spans label+count nodes",
+   "alt": [
+    "stat_highlight"
+   ]
+  },
+  {
+   "text": "Last commit message",
+   "component": "file_tree",
+   "note": "file listing table header"
+  },
+  {
+   "text": "Repository files navigation",
+   "component": "navigation",
+   "note": "README/Code of conduct/License tabs"
+  },
+  {
+   "text": "Sanitize your inputs in untrusted environments",
+   "component": "callout_note",
+   "note": "[!IMPORTANT] box at top of README"
+  },
+  {
+   "text": "is a lightweight Python utility for converting various files to Markdown",
+   "component": "doc_header",
+   "note": "README title MarkItDown + summary paragraph",
+   "alt": [
+    "doc_prose"
+   ]
+  },
+  {
+   "text": "While the output is often reasonably presentable and human-friendly",
+   "component": "doc_prose"
+  },
+  {
+   "text": "Images (EXIF metadata and OCR)",
+   "component": "feature_bullets",
+   "note": "list of supported input formats",
+   "alt": [
+    "doc_prose"
+   ]
+  },
+  {
+   "text": "Markdown is extremely close to plain text, with minimal markup",
+   "component": "doc_prose",
+   "note": "Why Markdown?"
+  },
+  {
+   "text": "It is recommended to use a virtual environment to avoid dependency conflicts.",
+   "component": "install_instructions",
+   "note": "Prerequisites (venv setup commands)",
+   "alt": [
+    "doc_prose"
+   ]
+  },
+  {
+   "text": "git clone git@github.com:microsoft/markitdown.git",
+   "component": "install_instructions",
+   "note": "Installation"
+  },
+  {
+   "text": "Or use -o to specify the output file:",
+   "component": "cli_reference",
+   "note": "Usage > Command-Line"
+  },
+  {
+   "text": "cat path-to-file.pdf | markitdown",
+   "component": "cli_reference"
+  },
+  {
+   "text": "MarkItDown has optional dependencies for activating various file formats.",
+   "component": "install_instructions",
+   "note": "Optional Dependencies intro",
+   "alt": [
+    "doc_prose"
+   ]
+  },
+  {
+   "text": "Installs dependencies for older Excel files",
+   "component": "parameter_list",
+   "note": "list of pip extras [all]/[pptx]/... with descriptions",
+   "alt": [
+    "install_instructions",
+    "doc_prose"
+   ]
+  },
+  {
+   "text": "MarkItDown also supports 3rd-party plugins. Plugins are disabled by default.",
+   "component": "doc_prose",
+   "note": "Plugins",
+   "alt": [
+    "cli_reference"
+   ]
+  },
+  {
+   "text": "adds OCR support to PDF, DOCX, PPTX, and XLSX converters",
+   "component": "doc_prose",
+   "note": "markitdown-ocr Plugin"
+  },
+  {
+   "text": "\"document_with_images.pdf\"",
+   "component": "code_example",
+   "note": "OCR plugin python example"
+  },
+  {
+   "text": "provides higher-quality conversion with structured field extraction",
+   "component": "doc_prose",
+   "note": "Azure Content Understanding"
+  },
+  {
+   "text": "CU is the only option for video",
+   "component": "doc_prose",
+   "note": "When to use CU: bullet list",
+   "alt": [
+    "feature_bullets"
+   ]
+  },
+  {
+   "text": "Offline, format-specific extraction",
+   "component": "product_comparison",
+   "note": "table comparing Built-in / Doc Intelligence / Content Understanding",
+   "alt": [
+    "data_table"
+   ]
+  },
+  {
+   "text": "Zero-config — auto-selects analyzer per file type",
+   "component": "code_example",
+   "note": "CU Python API example"
+  },
+  {
+   "text": "is a billable Azure API call",
+   "component": "callout_note",
+   "note": "bold 'Cost note:' paragraph",
+   "alt": [
+    "doc_prose"
+   ]
+  },
+  {
+   "text": "--docintel-model-id prebuilt-layout",
+   "component": "cli_reference",
+   "note": "Doc Intelligence CLI usage"
+  },
+  {
+   "text": "No analysis add-ons are enabled by default.",
+   "component": "doc_prose"
+  },
+  {
+   "text": "Set to True to enable plugins",
+   "component": "code_example",
+   "note": "Python API basic usage"
+  },
+  {
+   "text": "Models that return structured fields prepend them to the Markdown",
+   "component": "doc_prose"
+  },
+  {
+   "text": "controls the OpenAI client's automatic retries for retryable errors",
+   "component": "doc_prose"
+  },
+  {
+   "text": "docker build -t markitdown:latest",
+   "component": "install_instructions",
+   "note": "Docker",
+   "alt": [
+    "cli_reference",
+    "code_example"
+   ]
+  },
+  {
+   "text": "Most contributions require you to agree to a Contributor License Agreement",
+   "component": "doc_prose",
+   "note": "Contributing"
+  },
+  {
+   "text": "Bug fixes, performance improvements, and security fixes",
+   "component": "community_rules",
+   "note": "What to Contribute: in-scope list",
+   "alt": [
+    "doc_prose"
+   ]
+  },
+  {
+   "text": "We cannot accept additional applications, services, or servers.",
+   "component": "community_rules",
+   "note": "What to Contribute: out of scope",
+   "alt": [
+    "doc_prose"
+   ]
+  },
+  {
+   "text": "Issues open for contribution",
+   "component": "data_table",
+   "note": "How to Contribute table of issue/PR links",
+   "alt": [
+    "navigation"
+   ]
+  },
+  {
+   "text": "Install hatch in your environment and run tests:",
+   "component": "code_example",
+   "note": "Running Tests and Checks",
+   "alt": [
+    "cli_reference",
+    "install_instructions"
+   ]
+  },
+  {
+   "text": "Do not pass untrusted input directly to MarkItDown.",
+   "component": "doc_prose",
+   "note": "Security Considerations",
+   "alt": [
+    "callout_note"
+   ]
+  },
+  {
+   "text": "Authorized use of Microsoft trademarks or logos is subject to",
+   "component": "doc_prose",
+   "note": "Trademarks legal text inside README",
+   "alt": [
+    "footer"
+   ]
+  },
+  {
+   "text": "© 2026 GitHub, Inc.",
+   "component": "footer"
+  },
+  {
+   "text": "Do not share my personal information",
+   "component": "footer"
+  },
+  {
+   "text": "You can’t perform that action at this time.",
+   "component": "ui_chrome"
+  }
+ ],
+ "fields": {
+  "repo_header.name": "markitdown",
+  "repo_header.description": "Python tool for converting files and office documents to Markdown.",
+  "repo_header.stars": "193.1k",
+  "repo_header.forks": "14.5k",
+  "doc_header.title": "MarkItDown",
+  "doc_header.summary": "MarkItDown is a lightweight Python utility for converting various files to Markdown for use with LLMs and related text analysis pipelines."
+ }
+}

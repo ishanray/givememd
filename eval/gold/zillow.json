@@ -1,0 +1,106 @@
+{
+ "page": "zillow",
+ "url": "https://www.zillow.com/homes/Austin,-TX_rb/",
+ "page_type": "listings",
+ "sections": [
+  {
+   "text": "clear search text button",
+   "component": "search_box",
+   "note": "visually-hidden button label of search input"
+  },
+  {
+   "text": "No options are currently available.",
+   "component": "search_box",
+   "note": "visually-hidden combobox suggestion text",
+   "alt": [
+    "ui_chrome"
+   ]
+  },
+  {
+   "text": "For sale Price Beds & baths Property type Filters",
+   "component": "filter_panel"
+  },
+  {
+   "text": "Austin TX Real Estate & Homes For Sale",
+   "component": "result_count",
+   "note": "h1 of results page; no listing-page title component",
+   "alt": [
+    "listing_grid"
+   ]
+  },
+  {
+   "text": "5,687 results Sort: Homes for You",
+   "component": "result_count",
+   "note": "result count + sort control"
+  },
+  {
+   "text": "8709 Blaze Dr, Austin, TX 78747",
+   "component": "real_estate_listing",
+   "note": "card 1 address",
+   "alt": [
+    "listing_card"
+   ]
+  },
+  {
+   "text": "COMPASS RE TEXAS, LLC",
+   "component": "real_estate_listing",
+   "note": "card 1 brokerage",
+   "alt": [
+    "listing_card"
+   ]
+  },
+  {
+   "text": "529 Summer Alcove Way, Austin, TX 78732",
+   "component": "real_estate_listing",
+   "note": "card 2",
+   "alt": [
+    "listing_card"
+   ]
+  },
+  {
+   "text": "906 E 14th St #A, Austin, TX 78702",
+   "component": "real_estate_listing",
+   "note": "card 3",
+   "alt": [
+    "listing_card"
+   ]
+  },
+  {
+   "text": "2702 S 2nd St #1 & 2, Austin, TX 78704",
+   "component": "real_estate_listing",
+   "note": "card 7",
+   "alt": [
+    "listing_card"
+   ]
+  },
+  {
+   "text": "Open: Tue 11am-12pm (11/10)",
+   "component": "real_estate_listing",
+   "note": "open-house badge on card 7",
+   "alt": [
+    "listing_card"
+   ]
+  },
+  {
+   "text": "4611 Esper Ln #324, Austin, TX 78725",
+   "component": "real_estate_listing",
+   "note": "card 9 (last)",
+   "alt": [
+    "listing_card"
+   ]
+  },
+  {
+   "text": "Search Updates Favorites Plan Inbox",
+   "component": "navigation",
+   "note": "bottom tab bar (separate buttons)"
+  }
+ ],
+ "fields": {
+  "real_estate_listing.price": "$449,000",
+  "real_estate_listing.beds": "4 bds",
+  "real_estate_listing.baths": "3 ba",
+  "real_estate_listing.area": "2,428 sqft",
+  "real_estate_listing.status": "Active",
+  "real_estate_listing.address": "8709 Blaze Dr, Austin, TX 78747"
+ }
+}

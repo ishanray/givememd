@@ -1,0 +1,124 @@
+{
+ "page": "ars",
+ "url": "https://arstechnica.com/ai/2026/10/doordash-says-outside-ai-agents-have-only-led-to-hundreds-of-orders-so-far/",
+ "page_type": "article",
+ "sections": [
+  {
+   "text": "Skip to content Ars Technica home Sections Forum Subscribe",
+   "component": "navigation"
+  },
+  {
+   "text": "Theme HyperLight Day & Night Dark System",
+   "component": "ui_chrome",
+   "note": "text-settings dropdown (size/width/theme)"
+  },
+  {
+   "text": "Basically no one is using AI agents for their DoorDash orders",
+   "component": "article_header"
+  },
+  {
+   "text": "But it’s still early days for the relatively new e-commerce use case.",
+   "component": "article_header",
+   "note": "standfirst"
+  },
+  {
+   "text": "Kyle Orland – Oct 30, 2026 3:30 pm",
+   "component": "article_header",
+   "note": "byline + date"
+  },
+  {
+   "text": "Did an AI agent order that DoorDash basket? The answer is almost certianly",
+   "component": "image_caption",
+   "note": "caption appears twice (hidden lightbox copy + visible); typo is on the page"
+  },
+  {
+   "text": "many companies are trying to use LLMs to improve the experience of purchasing",
+   "component": "article_body"
+  },
+  {
+   "text": "DoorDash co-founder and CEO Tony Xu responded to an analyst question",
+   "component": "article_body"
+  },
+  {
+   "text": "In a marked understatement, Xu called this a “very low use case”",
+   "component": "article_body"
+  },
+  {
+   "text": "he sees the potential for AI agents to be genuinely helpful",
+   "component": "article_body"
+  },
+  {
+   "text": "DoorDash only rolled out its Model Context Protocol (MCP) connector",
+   "component": "subheading_section",
+   "note": "under subheading 'Give it time?'",
+   "alt": [
+    "article_body"
+   ]
+  },
+  {
+   "text": "Those include an “Ask DoorDash” feature the company rolled out this summer",
+   "component": "subheading_section",
+   "alt": [
+    "article_body"
+   ]
+  },
+  {
+   "text": "Pizza Hut’s first tentative online ordering experiments in 1994",
+   "component": "subheading_section",
+   "alt": [
+    "article_body"
+   ]
+  },
+  {
+   "text": "“My take on all things technology is you never want to fight gravity,”",
+   "component": "subheading_section",
+   "note": "closing quote paragraph, inline quote not a pull quote",
+   "alt": [
+    "article_body"
+   ]
+  },
+  {
+   "text": "has been the Senior Gaming Editor at Ars Technica since 2012",
+   "component": "author_bio"
+  },
+  {
+   "text": "7 Comments Comments Forum view Loading comments...",
+   "component": "ui_chrome",
+   "note": "comments iframe not loaded; only placeholder visible",
+   "alt": [
+    "comment_list"
+   ]
+  },
+  {
+   "text": "Reddit is moving to “a logged-in-only experience,” CEO says",
+   "component": "related_articles",
+   "note": "Most Read list"
+  },
+  {
+   "text": "SpaceX no longer needs NASA, and that's a problem for America's space agency",
+   "component": "related_articles"
+  },
+  {
+   "text": "Ars Technica has been separating the signal from the noise for over 25 years.",
+   "component": "footer"
+  },
+  {
+   "text": "About Us Staff Directory Newsletters General FAQ Posting Guidelines",
+   "component": "footer"
+  },
+  {
+   "text": "© 2026 Condé Nast. All rights reserved.",
+   "component": "footer"
+  },
+  {
+   "text": "Ars Technica may earn compensation on sales from links on this site.",
+   "component": "footer"
+  }
+ ],
+ "fields": {
+  "article_header.headline": "Basically no one is using AI agents for their DoorDash orders",
+  "article_header.author": "Kyle Orland",
+  "article_header.date": "Oct 30, 2026 3:30 pm",
+  "article_header.standfirst": "But it’s still early days for the relatively new e-commerce use case."
+ }
+}

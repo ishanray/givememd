@@ -1,0 +1,154 @@
+{
+ "page": "guardian",
+ "url": "https://www.theguardian.com/technology/2026/oct/18/wikipedia-human-history-ai-future-under-threat",
+ "page_type": "article",
+ "sections": [
+  {
+   "text": "Skip to main content",
+   "component": "navigation"
+  },
+  {
+   "text": "Print subscriptions Newsletters Sign in US US edition UK edition",
+   "component": "navigation",
+   "note": "top bar; contains Sign in and edition switcher",
+   "alt": [
+    "login_prompt"
+   ]
+  },
+  {
+   "text": "News View all News US news US politics Midterms 2026 World news",
+   "component": "navigation"
+  },
+  {
+   "text": "Download the app Digital Archive Guardian Licensing Live events",
+   "component": "navigation",
+   "note": "expanded menu links"
+  },
+  {
+   "text": "Wikipedia’s ‘amateurish, homegrown ethos’ was off-putting to a lot of writers",
+   "component": "image_caption",
+   "note": "main image caption (also duplicated in lightbox)"
+  },
+  {
+   "text": "Wikipedia often gets taken for granted – but its history is fascinating",
+   "component": "article_header"
+  },
+  {
+   "text": "Wikipedia’s 68m articles have been consulted trillions of times.",
+   "component": "article_header",
+   "note": "standfirst"
+  },
+  {
+   "text": "Sun 18 Oct 2026 10.00 EDT",
+   "component": "article_header",
+   "note": "dateline"
+  },
+  {
+   "text": "I was struck by the tension between how Wikipedia was used",
+   "component": "article_body"
+  },
+  {
+   "text": "Even people donating to Wikipedia might say the money was “for the factcheckers”",
+   "component": "article_body"
+  },
+  {
+   "text": "is Wikipedia’s Jimmy Wales the last decent tech baron?",
+   "component": "related_articles",
+   "note": "inline rich link to another story"
+  },
+  {
+   "text": "You could say that I fell down a Wiki rabbit hole",
+   "component": "article_body"
+  },
+  {
+   "text": "Ward Cunningham, who invented the wiki in the 1990s",
+   "component": "article_body"
+  },
+  {
+   "text": "Wikipedia co-founder Jimmy Wales. ‘Lots of people in the dotcom boom",
+   "component": "image_caption"
+  },
+  {
+   "text": "Philosophy drew Wikipedia’s co-founders together as well.",
+   "component": "article_body"
+  },
+  {
+   "text": "writing an “exhaustive” book on it is impossible",
+   "component": "article_body"
+  },
+  {
+   "text": "Gaytha Langlois, wrote about two things dear to her",
+   "component": "pull_quote",
+   "note": "blockquote in aside"
+  },
+  {
+   "text": "Wikipedia has always had a gender imbalance, which has proved stubborn",
+   "component": "article_body"
+  },
+  {
+   "text": "Neurodiversity is so central to Wikipedia that one former head",
+   "component": "article_body"
+  },
+  {
+   "text": "the inclusionists v deletionists debate",
+   "component": "article_body"
+  },
+  {
+   "text": "Pew Research estimates that it served 1.9tn page views between 2015 and 2025",
+   "component": "article_body"
+  },
+  {
+   "text": "A Human History of Wikipedia by Richard Cooke is out now through Black Inc",
+   "component": "article_body",
+   "note": "italic end note about the author's book; closest generic",
+   "alt": [
+    "author_bio",
+    "promo_ad"
+   ]
+  },
+  {
+   "text": "order your copy of the UK edition at guardianbookshop.com",
+   "component": "promo_ad",
+   "note": "bookshop upsell"
+  },
+  {
+   "text": "Explore more on these topics Wikipedia Internet Technology books",
+   "component": "navigation",
+   "note": "topic tags",
+   "alt": [
+    "genre_tags"
+   ]
+  },
+  {
+   "text": "Reuse this content",
+   "component": "share_buttons",
+   "note": "with Share button"
+  },
+  {
+   "text": "Sign in or create your Guardian account to join the discussion",
+   "component": "login_prompt",
+   "note": "comments section shows only a sign-in prompt",
+   "alt": [
+    "comment_list"
+   ]
+  },
+  {
+   "text": "Original reporting and incisive analysis, direct from the Guardian every morning",
+   "component": "newsletter_signup"
+  },
+  {
+   "text": "Complaints & corrections Contact us Tip us off SecureDrop",
+   "component": "footer"
+  },
+  {
+   "text": "© 2026 Guardian News & Media Limited or its affiliated companies.",
+   "component": "footer"
+  }
+ ],
+ "fields": {
+  "article_header.headline": "Wikipedia often gets taken for granted – but its history is fascinating, and its future is fragile",
+  "article_header.author": "Richard Cooke",
+  "article_header.date": "Sun 18 Oct 2026 10.00 EDT",
+  "article_header.standfirst": "Wikipedia’s 68m articles have been consulted trillions of times. Not bad for a website that has barely changed since it was founded 20 years ago"
+ }
+}

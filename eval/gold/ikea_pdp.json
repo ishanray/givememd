@@ -1,0 +1,275 @@
+{
+ "page": "ikea_pdp",
+ "url": "https://www.ikea.com/us/en/p/billy-bookcase-white-20522046/",
+ "page_type": "commerce",
+ "sections": [
+  {
+   "text": "Enter ZIP code Select store",
+   "component": "navigation",
+   "note": "header location/store picker"
+  },
+  {
+   "text": "Clear the search input field",
+   "component": "search_box"
+  },
+  {
+   "text": "Hej! Log in or sign up",
+   "component": "login_prompt"
+  },
+  {
+   "text": "Shop new arrivals",
+   "component": "promo_ad",
+   "note": "mobile header teaser link",
+   "alt": [
+    "navigation"
+   ]
+  },
+  {
+   "text": "Storage & organization",
+   "component": "breadcrumb",
+   "note": "Products > Storage & organization > Shelving furniture > Bookshelves & bookcases"
+  },
+  {
+   "text": "6 BILLY images Skip images",
+   "component": "ui_chrome",
+   "note": "image gallery a11y/zoom text"
+  },
+  {
+   "text": "More from the BILLY series",
+   "component": "recommendations",
+   "note": "series link above title",
+   "alt": [
+    "navigation"
+   ]
+  },
+  {
+   "text": "Bookcase, white, 31 1/2x11x79 1/2 \"",
+   "component": "product_header",
+   "note": "title line under \"BILLY\""
+  },
+  {
+   "text": "$ 79 . 00 Price $ 79.00",
+   "component": "product_header",
+   "note": "main price (split digits + screen-reader text)"
+  },
+  {
+   "text": "In-store only price $65.00",
+   "component": "price_offer",
+   "note": "IKEA Family member price",
+   "alt": [
+    "promo_ad"
+   ]
+  },
+  {
+   "text": "Offer valid from Sep 8, 2026 until Dec 24, 2026",
+   "component": "price_offer",
+   "note": "same member-offer block (Exclusive IKEA Family offer)",
+   "alt": [
+    "promo_ad"
+   ]
+  },
+  {
+   "text": "Total reviews: 2117 (2117)",
+   "component": "product_header",
+   "note": "rating under title"
+  },
+  {
+   "text": "Choose color : White",
+   "component": "variant_picker"
+  },
+  {
+   "text": "Design your own BILLY Bookcase",
+   "component": "promo_ad",
+   "note": "planner-tool upsell",
+   "alt": [
+    "call_to_action"
+   ]
+  },
+  {
+   "text": "Checking availability...",
+   "component": "ui_chrome",
+   "note": "\"How to get it\" loading text"
+  },
+  {
+   "text": "Collect 79 points with IKEA Family",
+   "component": "promo_ad",
+   "note": "loyalty upsell",
+   "alt": [
+    "login_prompt"
+   ]
+  },
+  {
+   "text": "Return within 365 days for a full refund*.",
+   "component": "shipping_returns"
+  },
+  {
+   "text": "Get the difference back within 90 days with IKEA Family",
+   "component": "price_offer",
+   "note": "Low Price Guarantee (price-protection policy)",
+   "alt": [
+    "promo_ad",
+    "shipping_returns"
+   ]
+  },
+  {
+   "text": "Checking payment options...",
+   "component": "ui_chrome"
+  },
+  {
+   "text": "Frequently Asked Questions",
+   "component": "table_of_contents",
+   "note": "tab bar: Overview / Product details / Measurements / FAQ",
+   "alt": [
+    "navigation"
+   ]
+  },
+  {
+   "text": "BILLY bookcase is a beloved icon that never goes out of style.",
+   "component": "product_description",
+   "note": "Overview tab summary"
+  },
+  {
+   "text": "Particleboard, Paper foil, Plastic edging",
+   "component": "spec_table",
+   "note": "Materials and care (rendered twice: overview + details accordion)"
+  },
+  {
+   "text": "Advice and care instructions",
+   "component": "navigation",
+   "note": "Assembly and documents: PDF download links; no documents component (rendered twice)"
+  },
+  {
+   "text": "Adjustable shelves can be arranged according to your needs.",
+   "component": "product_description",
+   "note": "Product details accordion"
+  },
+  {
+   "text": "Keep in mind that you need enough space between the top",
+   "component": "callout_note",
+   "note": "\"Good to know\" note",
+   "alt": [
+    "feature_bullets"
+   ]
+  },
+  {
+   "text": "1 stationary shelf and 4 adjustable shelves included.",
+   "component": "feature_bullets",
+   "note": "\"Good to know\" list item",
+   "alt": [
+    "whats_in_box"
+   ]
+  },
+  {
+   "text": "WARNING! Tipping hazard – this product must be securely anchored.",
+   "component": "callout_note",
+   "note": "Safety and compliance warning; no safety component"
+  },
+  {
+   "text": "Max load/shelf 66 lb",
+   "component": "spec_table",
+   "note": "Measurements"
+  },
+  {
+   "text": "Weight: 88 lb 1 oz",
+   "component": "spec_table",
+   "note": "Packaging dimensions"
+  },
+  {
+   "text": "What is the maximum weight capacity for each BILLY bookcase shelf?",
+   "component": "faq"
+  },
+  {
+   "text": "Can BILLY bookcases be painted?",
+   "component": "faq"
+  },
+  {
+   "text": "These questions and answers were created using Generative AI",
+   "component": "faq",
+   "note": "AI-generated disclaimer under FAQ",
+   "alt": [
+    "ui_chrome"
+   ]
+  },
+  {
+   "text": "The fasteners will not hold the sides to the top",
+   "component": "review_item",
+   "note": "full review list (title, author, text, stars)"
+  },
+  {
+   "text": "Great with a small design flaw",
+   "component": "review_item"
+  },
+  {
+   "text": "Very low quality, baseboard cut-out too small",
+   "component": "review_item"
+  },
+  {
+   "text": "Customer reviews",
+   "component": "review_summary",
+   "note": "section is heading + 4.5 avg + 2117 reviews; heading is the unique anchor"
+  },
+  {
+   "text": "These shelves are FANTASTIC.",
+   "component": "review_item",
+   "note": "highlighted review carousel"
+  },
+  {
+   "text": "Aliesha, New Zealand",
+   "component": "review_item",
+   "note": "reviewer line of highlighted review"
+  },
+  {
+   "text": "Accessories for BILLY",
+   "component": "recommendations",
+   "note": "accessory carousel (no items in HTML)",
+   "alt": [
+    "bundle_offer"
+   ]
+  },
+  {
+   "text": "As seen on Instagram",
+   "component": "ui_chrome",
+   "note": "empty UGC gallery prompt",
+   "alt": [
+    "promo_ad"
+   ]
+  },
+  {
+   "text": "Related products",
+   "component": "recommendations",
+   "note": "category links with counts",
+   "alt": [
+    "navigation"
+   ]
+  },
+  {
+   "text": "Recommended for you",
+   "component": "recommendations"
+  },
+  {
+   "text": "Bring your ideas to life with special discounts",
+   "component": "promo_ad",
+   "note": "Join IKEA Family block at top of footer",
+   "alt": [
+    "footer",
+    "login_prompt"
+   ]
+  },
+  {
+   "text": "Product Recalls",
+   "component": "footer"
+  },
+  {
+   "text": "© Inter IKEA Systems B.V. 1999-2026",
+   "component": "footer"
+  }
+ ],
+ "fields": {
+  "product_header.name": "BILLY",
+  "product_header.price": "$ 79.00",
+  "product_header.rating": "4.5 out of 5 stars",
+  "product_header.rating_count": "2117",
+  "price_offer.price": "$65.00",
+  "variant_picker.values": "White"
+ }
+}

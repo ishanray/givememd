@@ -1,0 +1,232 @@
+{
+ "page": "wikipedia",
+ "url": "https://en.wikipedia.org/wiki/Markdown",
+ "page_type": "reference",
+ "sections": [
+  {
+   "text": "Community portal",
+   "component": "navigation",
+   "note": "left sidebar main menu"
+  },
+  {
+   "text": "Donate Create account Log in Personal tools",
+   "component": "login_prompt",
+   "note": "personal tools; alt navigation",
+   "alt": [
+    "navigation"
+   ]
+  },
+  {
+   "text": "1 History 2 Rise and divergence 3 CommonMark",
+   "component": "table_of_contents",
+   "note": "sidebar TOC"
+  },
+  {
+   "text": "Bahasa Indonesia",
+   "component": "navigation",
+   "note": "interlanguage links"
+  },
+  {
+   "text": "Get shortened URL",
+   "component": "navigation",
+   "note": "Tools menu"
+  },
+  {
+   "text": "From Wikipedia, the free encyclopedia",
+   "component": "ui_chrome",
+   "note": "site tagline"
+  },
+  {
+   "text": "Plain text markup language",
+   "component": "definition",
+   "note": "Wikipedia short description under the title; no encyclopedia title/header component exists",
+   "alt": [
+    "encyclopedia_section"
+   ]
+  },
+  {
+   "text": "For the marketing term, see",
+   "component": "disambiguation",
+   "note": "hatnote pointing to other meaning",
+   "alt": [
+    "navigation"
+   ]
+  },
+  {
+   "text": "This article relies excessively on references to primary sources",
+   "component": "correction_note",
+   "note": "maintenance/cleanup banner (editor note)",
+   "alt": [
+    "ui_chrome"
+   ]
+  },
+  {
+   "text": "net.daringfireball.markdown",
+   "component": "infobox",
+   "note": "main infobox (filename ext, media type, developer, releases)"
+  },
+  {
+   "text": "is a lightweight markup language for creating formatted text using a plain-text",
+   "component": "encyclopedia_section",
+   "note": "lead paragraph 1 (before first subheading)"
+  },
+  {
+   "text": "contained ambiguities and raised unanswered questions",
+   "component": "encyclopedia_section",
+   "note": "lead paragraph 2"
+  },
+  {
+   "text": "Markdown was inspired by pre-existing conventions for marking up plain text in",
+   "component": "encyclopedia_section",
+   "note": "History"
+  },
+  {
+   "text": "which converts marked-up text input to valid, well-formed XHTML or HTML",
+   "component": "encyclopedia_section",
+   "note": "History, last para"
+  },
+  {
+   "text": "As Markdown's popularity grew rapidly, many Markdown implementations appeared",
+   "component": "encyclopedia_section",
+   "note": "Rise and divergence"
+  },
+  {
+   "text": "text/markdown; variant=CommonMark",
+   "component": "infobox",
+   "note": "second infobox for CommonMark"
+  },
+  {
+   "text": "launched what Atwood characterised as a standardization effort",
+   "component": "encyclopedia_section",
+   "note": "CommonMark > Standardization"
+  },
+  {
+   "text": "objected to the usage of",
+   "component": "encyclopedia_section",
+   "note": "CommonMark > Name"
+  },
+  {
+   "text": "several websites and projects have adopted CommonMark",
+   "component": "encyclopedia_section",
+   "note": "CommonMark > Adoption"
+  },
+  {
+   "text": "Introduces MIME type",
+   "component": "encyclopedia_section",
+   "note": "bullet list of RFCs inside Adoption"
+  },
+  {
+   "text": "use variants of Markdown to make discussions between users easier",
+   "component": "encyclopedia_section",
+   "note": "Variants"
+  },
+  {
+   "text": "GitHub had been using its own variant of Markdown since as early as 2009",
+   "component": "encyclopedia_section",
+   "note": "Variants > GitHub Flavored Markdown"
+  },
+  {
+   "text": "It adds the following features that are not available with regular Markdown",
+   "component": "encyclopedia_section",
+   "note": "Variants > Markdown Extra"
+  },
+  {
+   "text": "Elements with id/class attribute",
+   "component": "encyclopedia_section",
+   "note": "feature bullet list inside Markdown Extra",
+   "alt": [
+    "key_takeaways"
+   ]
+  },
+  {
+   "text": "Corresponding HTML produced by a Markdown processor",
+   "component": "code_example",
+   "note": "Examples: 3-column table markdown source / HTML / rendered",
+   "alt": [
+    "data_table"
+   ]
+  },
+  {
+   "text": "Implementations of Markdown are available for over a dozen",
+   "component": "encyclopedia_section",
+   "note": "Implementations"
+  },
+  {
+   "text": "there are specially designed editors that preview the files with styles",
+   "component": "encyclopedia_section",
+   "note": "Implementations para 2"
+  },
+  {
+   "text": "Comparison of documentation generators",
+   "component": "see_also",
+   "note": "See also list"
+  },
+  {
+   "text": "Technically HTML description lists",
+   "component": "citations",
+   "note": "Explanatory notes"
+  },
+  {
+   "text": "The Markdown File Extension",
+   "component": "citations",
+   "note": "References list"
+  },
+  {
+   "text": "Markdown for Writers (2nd, revised ed.)",
+   "component": "citations",
+   "note": "Further reading (bibliography)",
+   "alt": [
+    "see_also"
+   ]
+  },
+  {
+   "text": "Official website for original John Gruber markup",
+   "component": "see_also",
+   "note": "External links list",
+   "alt": [
+    "citations",
+    "navigation"
+   ]
+  },
+  {
+   "text": "Document markup languages",
+   "component": "navigation",
+   "note": "navbox (Document markup languages)"
+  },
+  {
+   "text": "Data exchange formats",
+   "component": "navigation",
+   "note": "navbox (Data exchange formats)"
+  },
+  {
+   "text": "Authority control databases",
+   "component": "navigation",
+   "note": "authority control navbox"
+  },
+  {
+   "text": "Computer-related introductions in 2004",
+   "component": "navigation",
+   "note": "categories"
+  },
+  {
+   "text": "This page was last edited on 10 October 2026",
+   "component": "footer"
+  },
+  {
+   "text": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License",
+   "component": "footer"
+  },
+  {
+   "text": "Privacy policy About Wikipedia Disclaimers",
+   "component": "footer"
+  }
+ ],
+ "fields": {
+  "infobox.facts.Filename extensions": ".md",
+  "infobox.facts.Internet media type": "text/markdown",
+  "infobox.facts.Developed by": "John Gruber",
+  "infobox.facts.Initial release": "March 9, 2004",
+  "infobox.facts.Latest release": "1.0.1",
+  "infobox.facts.Type of format": "Open file format"
+ }
+}

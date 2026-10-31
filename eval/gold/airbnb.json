@@ -1,0 +1,92 @@
+{
+ "page": "airbnb",
+ "url": "https://www.airbnb.com/s/Austin--TX/homes",
+ "page_type": "listings",
+ "sections": [
+  {
+   "text": "Skip to content",
+   "component": "navigation",
+   "note": "screen-reader skip link",
+   "alt": [
+    "ui_chrome"
+   ]
+  },
+  {
+   "text": "Homes Homes Experiences Experiences Services Services",
+   "component": "navigation",
+   "note": "top product tabs"
+  },
+  {
+   "text": "Start your search",
+   "component": "search_box"
+  },
+  {
+   "text": "Check in / Check out",
+   "component": "search_box",
+   "note": "date field of search bar"
+  },
+  {
+   "text": "Guests Add guests Add guests",
+   "component": "search_box"
+  },
+  {
+   "text": "Languages & currency",
+   "component": "navigation",
+   "note": "header menu item"
+  },
+  {
+   "text": "It's easy to start hosting and earn extra income.",
+   "component": "promo_ad",
+   "note": "'Become a host' upsell in header menu",
+   "alt": [
+    "login_prompt"
+   ]
+  },
+  {
+   "text": "Refer a Host Find a co-host Gift cards",
+   "component": "navigation",
+   "note": "header dropdown menu"
+  },
+  {
+   "text": "Log in or sign up",
+   "component": "login_prompt"
+  },
+  {
+   "text": "filters Filters",
+   "component": "filter_panel"
+  },
+  {
+   "text": "Fake title 1 Fake title 2",
+   "component": "ui_chrome",
+   "note": "skeleton placeholder chips (unrendered filter/category bar); no real listings in cached HTML"
+  },
+  {
+   "text": "Fake title 9 Fake title 10",
+   "component": "ui_chrome",
+   "note": "skeleton placeholders"
+  },
+  {
+   "text": "Search results; Over 1,000 stays",
+   "component": "result_count",
+   "note": "visually-hidden h1; the only results content present"
+  },
+  {
+   "text": "Get help with a safety issue",
+   "component": "footer"
+  },
+  {
+   "text": "Airbnb your experience",
+   "component": "footer"
+  },
+  {
+   "text": "Airbnb.org emergency stays",
+   "component": "footer"
+  },
+  {
+   "text": "Footer section English (US) $ USD",
+   "component": "footer",
+   "note": "footer language/currency bar"
+  }
+ ],
+ "fields": {}
+}

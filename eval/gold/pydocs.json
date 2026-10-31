@@ -1,0 +1,281 @@
+{
+ "page": "pydocs",
+ "url": "https://docs.python.org/3/library/pathlib.html",
+ "page_type": "docs",
+ "sections": [
+  {
+   "text": "Theme Auto Light Dark",
+   "component": "ui_chrome",
+   "note": "theme switcher; occurs 3x (mobile menu, header, footer)"
+  },
+  {
+   "text": "Table of Contents pathlib — Object-oriented filesystem paths Basic use",
+   "component": "table_of_contents",
+   "note": "sidebar TOC; sidebar duplicated at top (mobile) and bottom (desktop) of DOM, so 2x"
+  },
+  {
+   "text": "Previous topic File and Directory Access",
+   "component": "navigation",
+   "note": "prev/next topic links (2x)"
+  },
+  {
+   "text": "The Python standard library » File and Directory Access",
+   "component": "breadcrumb",
+   "note": "related-bar breadcrumb (2x: top and bottom)"
+  },
+  {
+   "text": "Source code: Lib/pathlib/",
+   "component": "doc_header",
+   "note": "'Added in version 3.4. Source code:' metadata line under title",
+   "alt": [
+    "doc_prose"
+   ]
+  },
+  {
+   "text": "This module offers classes representing filesystem paths with semantics",
+   "component": "doc_header",
+   "note": "H1 'pathlib — Object-oriented filesystem paths' + first summary para"
+  },
+  {
+   "text": "If you’ve never used this module before or just aren’t sure which class",
+   "component": "doc_prose",
+   "note": "intro para"
+  },
+  {
+   "text": "If you want to manipulate Windows paths on a Unix machine",
+   "component": "doc_prose",
+   "note": "intro bullet list of pure-path use cases"
+  },
+  {
+   "text": "The pathlib module – object-oriented filesystem paths.",
+   "component": "see_also",
+   "note": "'See also' admonition box (PEP 428)",
+   "alt": [
+    "callout_note"
+   ]
+  },
+  {
+   "text": "Listing Python source files in this directory tree:",
+   "component": "code_example",
+   "note": "Basic use: interactive examples"
+  },
+  {
+   "text": "exception pathlib. UnsupportedOperation",
+   "component": "api_signature",
+   "note": "API signature line rendered from many spans; snippet matches the space-separated text only"
+  },
+  {
+   "text": "An exception inheriting NotImplementedError that is raised",
+   "component": "doc_prose",
+   "note": "description of the exception"
+  },
+  {
+   "text": "Pure path objects provide path-handling operations which don’t actually access",
+   "component": "doc_prose",
+   "note": "Pure paths intro"
+  },
+  {
+   "text": "class pathlib. PurePath ( * pathsegments )",
+   "component": "api_signature",
+   "note": "API signature line rendered from many spans; snippet matches the space-separated text only"
+  },
+  {
+   "text": "Each element of pathsegments can be either a string representing a path segment",
+   "component": "parameter_list",
+   "note": "prose describing the pathsegments argument (no formal params list on this page)",
+   "alt": [
+    "doc_prose"
+   ]
+  },
+  {
+   "text": "Paths are immutable and hashable",
+   "component": "doc_prose",
+   "note": "General properties"
+  },
+  {
+   "text": "Paths of a different flavour compare unequal and cannot be ordered:",
+   "component": "code_example",
+   "note": "prose lead-in + doctest",
+   "alt": [
+    "doc_prose"
+   ]
+  },
+  {
+   "text": "The slash operator helps create child paths, like",
+   "component": "doc_prose",
+   "note": "Operators"
+  },
+  {
+   "text": "is only recommended under Unix. Under Windows, the unicode form is the canonical",
+   "component": "callout_note",
+   "note": "Note box"
+  },
+  {
+   "text": "A tuple giving access to the path’s various components:",
+   "component": "doc_prose",
+   "note": "PurePath.parts property description",
+   "alt": [
+    "return_value"
+   ]
+  },
+  {
+   "text": "The stem excludes only the final suffix",
+   "component": "doc_prose",
+   "note": "Methods and properties"
+  },
+  {
+   "text": "This is a purely lexical operation, hence the following behaviour:",
+   "component": "callout_note",
+   "note": "Note box (PurePath.parent)"
+  },
+  {
+   "text": "This function is part of PurePath and works with strings.",
+   "component": "callout_note",
+   "note": "Warning box (relative_to)"
+  },
+  {
+   "text": "The walk_up parameter was added",
+   "component": "changelog_entry",
+   "note": "inline 'Changed in version 3.12:' note; versionchanged notes are per-version change records",
+   "alt": [
+    "callout_note"
+   ]
+  },
+  {
+   "text": "Concrete paths are subclasses of the pure path classes.",
+   "component": "doc_prose",
+   "note": "Concrete paths intro"
+  },
+  {
+   "text": "class pathlib. Path ( * pathsegments )",
+   "component": "api_signature",
+   "note": "API signature line rendered from many spans; snippet matches the space-separated text only"
+  },
+  {
+   "text": "File URIs are not portable across machines with different filesystem encodings",
+   "component": "callout_note",
+   "note": "Note box"
+  },
+  {
+   "text": "Calling this method from PurePath rather than Path is possible but deprecated.",
+   "component": "callout_note",
+   "note": "'Deprecated since version 3.14' note",
+   "alt": [
+    "changelog_entry"
+   ]
+  },
+  {
+   "text": "Return a new path object representing the user’s home directory",
+   "component": "return_value",
+   "note": "Path.home() description",
+   "alt": [
+    "doc_prose"
+   ]
+  },
+  {
+   "text": "Use stat() to retrieve the file status without",
+   "component": "doc_prose",
+   "note": "Querying file type and status"
+  },
+  {
+   "text": "Path. open ( mode = 'r' , buffering = -1",
+   "component": "api_signature",
+   "note": "API signature line rendered from many spans; snippet matches the space-separated text only"
+  },
+  {
+   "text": "Return the decoded contents of the pointed-to file as a string:",
+   "component": "return_value",
+   "note": "read_text()",
+   "alt": [
+    "doc_prose"
+   ]
+  },
+  {
+   "text": "The children are yielded in arbitrary order",
+   "component": "doc_prose",
+   "note": "Reading directories: iterdir()"
+  },
+  {
+   "text": "Path. touch ( mode = 0o666 , exist_ok = True )",
+   "component": "api_signature",
+   "note": "API signature line rendered from many spans; snippet matches the space-separated text only"
+  },
+  {
+   "text": "methods are often used to create files.",
+   "component": "see_also",
+   "note": "'See also' admonition box after touch()",
+   "alt": [
+    "callout_note"
+   ]
+  },
+  {
+   "text": "If parents is true, any missing parents of this path are created as needed",
+   "component": "parameter_list",
+   "note": "mkdir() parameter descriptions written as prose",
+   "alt": [
+    "doc_prose"
+   ]
+  },
+  {
+   "text": "If preserve_metadata is false (the default), only directory structures",
+   "component": "parameter_list",
+   "note": "copy() parameter description as prose",
+   "alt": [
+    "doc_prose"
+   ]
+  },
+  {
+   "text": "Return the name of the user owning the file.",
+   "component": "return_value",
+   "note": "owner()",
+   "alt": [
+    "doc_prose"
+   ]
+  },
+  {
+   "text": "Matches any number of file or directory segments, including zero.",
+   "component": "definition",
+   "note": "Pattern language: wildcard -> meaning list",
+   "alt": [
+    "data_table",
+    "doc_prose"
+   ]
+  },
+  {
+   "text": "Files beginning with a dot are not special in pathlib.",
+   "component": "doc_prose",
+   "note": "Comparison to the glob module (bullets)"
+  },
+  {
+   "text": "Some users consider the object-oriented style to be more readable.",
+   "component": "doc_prose",
+   "note": "Comparison to os/os.path"
+  },
+  {
+   "text": "os.path.isjunction()",
+   "component": "data_table",
+   "note": "Corresponding tools: os vs pathlib mapping table",
+   "alt": [
+    "product_comparison"
+   ]
+  },
+  {
+   "text": "calls abspath() to make paths absolute",
+   "component": "citations",
+   "note": "table footnotes"
+  },
+  {
+   "text": "The pathlib.types module provides types for static type checking.",
+   "component": "doc_prose",
+   "note": "Protocols"
+  },
+  {
+   "text": "© Copyright 2001 Python Software Foundation.",
+   "component": "footer"
+  }
+ ],
+ "fields": {
+  "doc_header.title": "pathlib — Object-oriented filesystem paths",
+  "doc_header.summary": "This module offers classes representing filesystem paths with semantics appropriate for different operating systems."
+ }
+}
