@@ -215,6 +215,11 @@ def test_hidden_tab_panels_are_kept():
     assert 'Battery: 30 hours' in convert(html, 'https://x.com', links=False)
 
 
+def test_html_comments_add_no_space():
+    md = convert('<main><p>' + 'Nutrition per serving: fat 29<!-- -->g, carbs 59<!-- -->g. ' * 12 + '</p></main>', 'https://x.com', links=False)
+    assert 'fat 29g' in md and '29 g' not in md
+
+
 # ---------- block detection ----------
 @pytest.mark.parametrize('name', ['block_aws_waf.html', 'block_shop_interstitial.html',
                                   'block_datadome.html', 'block_network_security.html'])

@@ -13,11 +13,18 @@ being passed off as content.
 
 ## Install
 
+**Python**
 ```sh
 pip install givememd                       # core: fetch + extract
 pip install "givememd[browser]"            # + headless Chromium tier
 python -m playwright install chromium-headless-shell
 pip install "givememd[mcp]"                # + MCP server for Claude / other agents
+```
+
+**Node** (a TypeScript port with byte-for-byte parity tests; see [js/README.md](js/README.md))
+```sh
+npx givememd https://example.com
+claude mcp add givememd -- npx -y givememd-mcp
 ```
 
 Optional: [Lightpanda](https://github.com/lightpanda-io/browser), a fast headless browser, as a middle tier. Install it

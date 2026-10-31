@@ -224,6 +224,8 @@ class MD:
             tag = c.tag
             if tag == '-text':
                 self.buf.append(c.text(deep=False)); return
+            if tag == '-comment':       # React's <!-- --> text separators: no space ("29<!-- -->g" renders as "29g")
+                return
             if tag in ('h1', 'h2', 'h3', 'h4', 'h5', 'h6'):
                 self.flush(); s = ws(c.text(separator=' '))
                 if s: self.blocks.append('#' * int(tag[1]) + ' ' + s)

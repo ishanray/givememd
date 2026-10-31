@@ -1,7 +1,7 @@
 name: ci
 on: [push, pull_request]
 jobs:
-  test:
+  python:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -13,3 +13,18 @@ jobs:
           python-version: ${{ matrix.python }}
       - run: pip install -e ".[dev,mcp]"
       - run: pytest -q
+  node:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: ["18", "20", "22", "24"]
+    defaults:
+      run:
+        working-directory: js
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - run: npm ci
+      - run: npm test          # includes byte-for-byte parity with the Python goldens in js/test/golden
