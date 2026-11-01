@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { convert, pageStatus, normalize, UnsafeURL } from '../dist/index.js';
-import { isPublicIp, checkPublic, decode, metadataChars } from '../dist/fetch.js';
+import { isPublicIp, checkPublic, decode, metadataChars, systemBrowser, installHeadlessShell } from '../dist/fetch.js';
 import { cleanUrl } from '../dist/extract.js';
 
 const fx = (n) => readFileSync(new URL(`../../tests/fixtures/${n}`, import.meta.url), 'utf8');
@@ -94,4 +94,18 @@ test('private targets, odd ports and non-http schemes are refused', async () => 
   await assert.rejects(checkPublic(normalize('http://example.com:6379/')), UnsafeURL);
   for (const t of ['file:///etc/passwd', 'ftp://example.com/x']) assert.throws(() => normalize(t), UnsafeURL);
   assert.equal(normalize('/amazon.com/dp/B0D1XD1ZV3'), 'https://amazon.com/dp/B0D1XD1ZV3');
+});
+
+test('system browser: env first, then installed paths', () => {
+  process.env.GIVEMEMD_CHROME = '/opt/my/chrome';
+  assert.equal(systemBrowser(), '/opt/my/chrome');
+  delete process.env.GIVEMEMD_CHROME;
+  assert.equal(systemBrowser([process.execPath]), process.execPath);   // any existing file stands in for a browser
+  assert.equal(systemBrowser(['/nonexistent/chrome']), null);
+});
+
+test('browser download can be disabled', () => {
+  process.env.GIVEMEMD_NO_BROWSER_DOWNLOAD = '1';
+  try { assert.throws(() => installHeadlessShell(), /GIVEMEMD_NO_BROWSER_DOWNLOAD/); }
+  finally { delete process.env.GIVEMEMD_NO_BROWSER_DOWNLOAD; }
 });

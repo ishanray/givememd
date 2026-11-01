@@ -14,19 +14,23 @@ being passed off as content.
 ## Requirements
 
 givememd ships for both **Python 3.10+** and **Node 20+**; pick one. Both run on macOS (Intel and Apple silicon),
-Linux (x86-64 and ARM, glibc and musl) and Windows (x64 and ARM). No compiler, browser, API key or account is needed:
-the one native component (a browser-fingerprint HTTP client: curl_cffi in Python, impit in Node) installs as a prebuilt
-binary. The core install covers most pages. The optional extras below read more of the rest:
+Linux (x86-64 and ARM, glibc and musl) and Windows (x64 and ARM). No compiler, API key or account is needed.
 
-| For | Python | Node |
-|---|---|---|
-| Core: fetch + extract | `pip install givememd` | `npm i givememd` (or no install: `npx givememd <url>`) |
-| JavaScript-heavy pages and harder bot walls (headless Chromium) | `pip install "givememd[browser]"` | `npm i playwright-core` |
-| …then, once, for either (~100–150 MB) | `python -m playwright install chromium-headless-shell` | `npx playwright install chromium-headless-shell` |
-| Use from Claude and other agents (MCP) | `pip install "givememd[mcp]"` | included |
-| A faster middle tier: [Lightpanda](https://github.com/lightpanda-io/browser) (AGPL, not bundled) | set `GIVEMEMD_LIGHTPANDA=/path/to/lightpanda` | same |
+```sh
+pip install givememd        # or: npm i givememd   (or no install: npx givememd <url>)
+```
 
-Without the browser extras, pages that need JavaScript come back as `needs_js` or `blocked` instead of being read.
+**JavaScript-heavy pages work out of the box.** Most pages are read with one plain request: 86% of the top sites we
+could read, and 92% of smaller sites. Apps like Reddit, Amazon's homepage or character.ai need a real browser, and
+givememd uses one automatically:
+1. **An installed browser:** Chrome, Edge, Brave or Chromium, driven headlessly. Nothing to download.
+2. **Otherwise, a one-time download:** on the first page that needs JavaScript, givememd fetches Playwright's
+   headless Chromium (about 100 MB download, 200 MB on disk) and reuses it afterwards.
+   `GIVEMEMD_CHROME=/path/to/chrome` picks a browser; `GIVEMEMD_NO_BROWSER_DOWNLOAD=1` disables the download.
+3. **Optional, faster:** [Lightpanda](https://github.com/lightpanda-io/browser) (AGPL, not bundled), set with
+   `GIVEMEMD_LIGHTPANDA=/path/to/lightpanda`.
+
+Using it from Claude or other agents (MCP) needs `pip install "givememd[mcp]"` in Python; it's included in Node.
 
 **Your connection is the fetcher.** Run locally (CLI, library or MCP server), every request comes from your machine and
 your IP, which reads more of the web than a datacenter does. Nothing needs configuring. The optional settings are
@@ -114,7 +118,7 @@ and portal pages where keeping every menu scores more facts.
 ## Develop
 
 ```sh
-pip install -e ".[dev,mcp,browser]"
+pip install -e ".[dev,mcp]"
 pytest                          # offline unit tests
 pytest -m live                  # end-to-end: CLI, HTTP server and MCP over stdio, against the real web
 python bench/fetch_pages.py     # build the local page cache (other sites' pages are never committed)

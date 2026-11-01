@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /** givememd <url> [--no-links] [--trace]   -- print LLM-ready markdown for a web page (fetched from this machine). */
-import { read, UnsafeURL } from './index.js';
+import { closeBrowser, read, UnsafeURL } from './index.js';
 
 const USAGE = 'givememd <url> [--no-links] [--trace]   -- print LLM-ready markdown for a web page (fetched from this machine).';
 
@@ -12,11 +12,13 @@ async function main() {
   try {
     const { markdown, result } = await read(args[0], { links: !argv.includes('--no-links') });
     if (argv.includes('--trace')) console.error(result.trace.join('\n'));
-    if (markdown === null) { console.error(`could not read ${result.url}`); process.exit(1); }
+    if (markdown === null) { console.error(`could not read ${result.url}`); process.exitCode = 1; return; }
     process.stdout.write(markdown);
   } catch (e) {
-    if (e instanceof UnsafeURL) { console.error(`refused: ${e.message}`); process.exit(1); }
+    if (e instanceof UnsafeURL) { console.error(`refused: ${e.message}`); process.exitCode = 1; return; }
     throw e;
+  } finally {
+    await closeBrowser();
   }
 }
 main();

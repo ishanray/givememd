@@ -22,10 +22,11 @@ dependencies = [
   "selectolax>=0.3.27",
   "curl_cffi>=0.7",
   "tiktoken>=0.7",
+  "playwright>=1.40",            # JS rendering is part of the core: drives an installed Chrome/Edge, or downloads one once
 ]
 
 [project.optional-dependencies]
-browser = ["playwright>=1.40"]
+browser = []                     # kept so old install commands still work; the browser driver is now core
 mcp = ["mcp>=2.0"]
 dev = ["pytest>=8"]
 

@@ -70,3 +70,10 @@ def test_mcp_server_over_stdio():
 def test_cli():
     p = subprocess.run([sys.executable, '-m', 'givememd', PAGE, '--no-links', '--trace'], capture_output=True, text=True, timeout=120)
     assert p.returncode == 0 and 'http: ok' in p.stderr and 'useState' in p.stdout
+
+
+def test_javascript_rendering_works_out_of_the_box():
+    """A page that only renders with JavaScript: force the Chromium tier and check real content comes back."""
+    from givememd import read
+    md, r = read('https://react.dev/reference/react/useState', tiers=['chromium'])
+    assert r.tier == 'chromium' and 'useState' in md

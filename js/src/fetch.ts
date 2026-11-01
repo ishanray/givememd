@@ -6,7 +6,10 @@
  * followed by hand and re-checked. impit resolves names itself, so a DNS-rebinding window remains between our check
  * and its connect. GIVEMEMD_STRICT_SSRF=1 uses Node's https with the checked address pinned instead (no browser
  * fingerprint). The Python version pins with curl's RESOLVE. See SECURITY.md before running a public server. */
-import { execFile } from 'node:child_process';
+import { execFile, execFileSync } from 'node:child_process';
+import { existsSync } from 'node:fs';
+import { createRequire } from 'node:module';
+import { dirname, join } from 'node:path';
 import { lookup } from 'node:dns/promises';
 import { BlockList, isIP } from 'node:net';
 import { cssFirst, attr, parse } from './dom.js';
@@ -131,15 +134,68 @@ async function tierLightpanda(url: string): Promise<TierOut> {
   });
 }
 
+// Chromium-family browsers people already have; driving one headlessly needs no download
+const SYSTEM_BROWSERS = [
+  '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
+  '/Applications/Microsoft Edge.app/Contents/MacOS/Microsoft Edge',
+  '/Applications/Brave Browser.app/Contents/MacOS/Brave Browser',
+  '/Applications/Chromium.app/Contents/MacOS/Chromium',
+  'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
+  'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe',
+  'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe',
+  'C:\\Program Files\\Microsoft\\Edge\\Application\\msedge.exe',
+  '/usr/bin/google-chrome', '/usr/bin/google-chrome-stable', '/usr/bin/chromium', '/usr/bin/chromium-browser',
+  '/usr/bin/microsoft-edge', '/usr/bin/brave-browser', '/snap/bin/chromium',
+];
+
+/** GIVEMEMD_CHROME, else an installed Chrome / Edge / Brave / Chromium, else null. */
+export function systemBrowser(candidates = SYSTEM_BROWSERS): string | null {
+  if (process.env.GIVEMEMD_CHROME) return process.env.GIVEMEMD_CHROME;
+  return candidates.find((p) => existsSync(p)) ?? null;
+}
+
+/** First JS-heavy page and no browser around: fetch Playwright's headless Chromium once (~100 MB download, ~200 MB on disk). */
+export function installHeadlessShell(): void {
+  if (process.env.GIVEMEMD_NO_BROWSER_DOWNLOAD === '1') throw new Error('no browser found and GIVEMEMD_NO_BROWSER_DOWNLOAD=1');
+  process.stderr.write('givememd: this page needs JavaScript and no Chrome/Edge was found; downloading a headless browser once ' +
+    '(~100 MB download, ~200 MB on disk; set GIVEMEMD_CHROME to use your own, or GIVEMEMD_NO_BROWSER_DOWNLOAD=1 to skip)...\n');
+  const cli = join(dirname(createRequire(import.meta.url).resolve('playwright-core/package.json')), 'cli.js');
+  execFileSync(process.execPath, [cli, 'install', 'chromium-headless-shell'], { stdio: ['ignore', 'ignore', 'inherit'] });
+}
+
+// one browser per process, kept warm between requests (MCP / server) and closed after a minute idle
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+let browserP: Promise<any> | null = null;
+let idle: NodeJS.Timeout | null = null;
+
+async function launchBrowser() {
+  const { chromium } = await import('playwright-core');
+  const exe = systemBrowser();
+  if (exe) {
+    try { return await chromium.launch({ headless: true, executablePath: exe }); } catch { /* fall back to Playwright's own */ }
+  }
+  try { return await chromium.launch({ headless: true }); }
+  catch (e) {
+    if (!String((e as Error).message).includes("Executable doesn't exist")) throw e;
+    installHeadlessShell();
+    return chromium.launch({ headless: true });
+  }
+}
+
+/** Close the shared browser (the CLI calls this before exiting). */
+export async function closeBrowser(): Promise<void> {
+  if (idle) { clearTimeout(idle); idle = null; }
+  const p = browserP; browserP = null;
+  if (p) await (await p).close().catch(() => {});
+}
+
 async function tierChromium(url: string): Promise<TierOut> {
-  // optional peer dependency: loaded by name so the package builds and runs without it
-  const name = 'playwright-core';
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  let pw: any;
-  try { pw = await import(name); } catch { throw new Error('playwright-core not installed (npm i playwright-core && npx playwright install chromium-headless-shell)'); }
-  const browser = await pw.chromium.launch({ headless: true });
+  if (idle) { clearTimeout(idle); idle = null; }
+  browserP ??= launchBrowser().catch((e) => { browserP = null; throw e; });
+  const browser = await browserP;
+  const context = await browser.newContext({ userAgent: UA, locale: 'en-US' });
   try {
-    const page = await browser.newPage({ userAgent: UA, locale: 'en-US' });
+    const page = await context.newPage();
     const resp = await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 30_000 });
     let status = resp ? resp.status() : 0;
     const deadline = Date.now() + 15_000;       // JS challenges solve themselves and reload; give them time
@@ -153,7 +209,9 @@ async function tierChromium(url: string): Promise<TierOut> {
     }
     return [status, html, 'text/html', page.url()];
   } finally {
-    await browser.close();
+    await context.close().catch(() => {});
+    idle = setTimeout(() => { closeBrowser(); }, 60_000);
+    idle.unref();
   }
 }
 
@@ -174,6 +232,7 @@ export function metadataChars(html: string): number {
 export async function fetchPage(target: string, tiers: string[] | null = null, useCache = true): Promise<Result> {
   const url = normalize(target);
   await checkPublic(url);
+  useCache = useCache && !tiers;   // asking for specific tiers means "fetch it this way", not "whatever is cached"
   const hit = cache.get(url);
   if (useCache && hit && Date.now() - hit[0] < CACHE_TTL) return { ...hit[1], tier: hit[1].tier + '+cache' };
   const res = newResult(url);

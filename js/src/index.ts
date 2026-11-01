@@ -3,7 +3,7 @@ import { convert } from './extract.js';
 import { fetchPage, TIERS, UnsafeURL, type Result } from './fetch.js';
 
 export { convert, type ConvertOptions } from './extract.js';
-export { fetchPage, normalize, UnsafeURL, type Result } from './fetch.js';
+export { closeBrowser, fetchPage, normalize, UnsafeURL, type Result } from './fetch.js';
 export { pageStatus } from './decide.js';
 
 /** Text after the frontmatter, without markdown punctuation. */

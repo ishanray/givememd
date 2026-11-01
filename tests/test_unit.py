@@ -220,6 +220,23 @@ def test_html_comments_add_no_space():
     assert 'fat 29g' in md and '29 g' not in md
 
 
+def test_system_browser_prefers_env_then_installed(monkeypatch, tmp_path):
+    import importlib; F = importlib.import_module('givememd.fetch')
+    monkeypatch.setenv('GIVEMEMD_CHROME', '/opt/my/chrome')
+    assert F.system_browser() == '/opt/my/chrome'
+    monkeypatch.delenv('GIVEMEMD_CHROME')
+    fake = tmp_path / 'chrome'; fake.write_text('')
+    monkeypatch.setattr(F, 'SYSTEM_BROWSERS', [str(fake)])
+    assert F.system_browser() == str(fake)
+
+
+def test_browser_download_can_be_disabled(monkeypatch):
+    import importlib; F = importlib.import_module('givememd.fetch')
+    monkeypatch.setenv('GIVEMEMD_NO_BROWSER_DOWNLOAD', '1')
+    with pytest.raises(RuntimeError):
+        F.install_headless_shell()
+
+
 # ---------- block detection ----------
 @pytest.mark.parametrize('name', ['block_aws_waf.html', 'block_shop_interstitial.html',
                                   'block_datadome.html', 'block_network_security.html'])

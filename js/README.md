@@ -10,8 +10,11 @@ npx givememd https://www.zillow.com/homes/Austin,-TX_rb/
 ## Install
 ```sh
 npm i givememd
-npm i playwright-core && npx playwright install chromium-headless-shell   # optional headless-Chromium tier
 ```
+JavaScript-heavy pages work out of the box. givememd drives an installed Chrome, Edge, Brave or Chromium headlessly.
+If none is installed, it downloads Playwright's headless Chromium once, on the first page that needs it (about 100 MB
+download, 200 MB on disk). `GIVEMEMD_CHROME` picks a browser; `GIVEMEMD_NO_BROWSER_DOWNLOAD=1` disables the download.
+The browser stays warm between requests in the MCP and HTTP servers.
 Optional: [Lightpanda](https://github.com/lightpanda-io/browser), a fast headless browser, as a middle tier. Install it
 separately (AGPL, not bundled) and set `GIVEMEMD_LIGHTPANDA=/path/to/lightpanda`.
 

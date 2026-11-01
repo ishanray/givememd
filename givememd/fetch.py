@@ -117,10 +117,61 @@ def tier_lightpanda(url):
     return (200 if p.returncode == 0 else 599), p.stdout, 'text/html', url
 
 
+# Chromium-family browsers people already have; driving one headlessly needs no download
+SYSTEM_BROWSERS = [
+    '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
+    '/Applications/Microsoft Edge.app/Contents/MacOS/Microsoft Edge',
+    '/Applications/Brave Browser.app/Contents/MacOS/Brave Browser',
+    '/Applications/Chromium.app/Contents/MacOS/Chromium',
+    r'C:\Program Files\Google\Chrome\Application\chrome.exe',
+    r'C:\Program Files (x86)\Google\Chrome\Application\chrome.exe',
+    r'C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe',
+    r'C:\Program Files\Microsoft\Edge\Application\msedge.exe',
+]
+SYSTEM_BROWSER_NAMES = ['google-chrome', 'google-chrome-stable', 'chromium', 'chromium-browser', 'microsoft-edge', 'brave-browser']
+
+
+def system_browser():
+    """GIVEMEMD_CHROME, else an installed Chrome / Edge / Brave / Chromium, else None."""
+    if os.environ.get('GIVEMEMD_CHROME'):
+        return os.environ['GIVEMEMD_CHROME']
+    for p in SYSTEM_BROWSERS:
+        if os.path.exists(p):
+            return p
+    return next((w for n in SYSTEM_BROWSER_NAMES if (w := shutil.which(n))), None)
+
+
+def install_headless_shell():
+    """First JS-heavy page and no browser around: fetch Playwright's headless Chromium once (~100 MB download, ~200 MB on disk)."""
+    import sys
+    if os.environ.get('GIVEMEMD_NO_BROWSER_DOWNLOAD') == '1':
+        raise RuntimeError('no browser found and GIVEMEMD_NO_BROWSER_DOWNLOAD=1')
+    print('givememd: this page needs JavaScript and no Chrome/Edge was found; downloading a headless browser once '
+          '(~100 MB download, ~200 MB on disk; set GIVEMEMD_CHROME to use your own, or GIVEMEMD_NO_BROWSER_DOWNLOAD=1 to skip)...', file=sys.stderr)
+    subprocess.run([sys.executable, '-m', 'playwright', 'install', 'chromium-headless-shell'], check=True,
+                   stdout=subprocess.DEVNULL)
+
+
+def launch_browser(pw):
+    exe = system_browser()
+    if exe:
+        try:
+            return pw.chromium.launch(headless=True, executable_path=exe)
+        except Exception:
+            pass                          # a broken or unusual install: fall back to Playwright's own browser
+    try:
+        return pw.chromium.launch(headless=True)
+    except Exception as e:
+        if "Executable doesn't exist" not in str(e):
+            raise
+        install_headless_shell()
+        return pw.chromium.launch(headless=True)
+
+
 def tier_chromium(url):
     from playwright.sync_api import sync_playwright
     with sync_playwright() as pw:
-        b = pw.chromium.launch(headless=True)
+        b = launch_browser(pw)
         try:
             page = b.new_page(user_agent=UA, locale='en-US')
             resp = page.goto(url, wait_until='domcontentloaded', timeout=30_000)
@@ -166,6 +217,7 @@ def metadata_chars(html):
 def fetch(target, tiers=None, use_cache=True):
     url = normalize(target)
     check_public(url)
+    use_cache = use_cache and not tiers   # asking for specific tiers means "fetch it this way", not "whatever is cached"
     hit = _cache.get(url)
     if use_cache and hit and time.time() - hit[0] < CACHE_TTL:
         r = hit[1]

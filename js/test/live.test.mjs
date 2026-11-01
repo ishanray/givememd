@@ -44,3 +44,12 @@ test('mcp server over stdio', async () => {
     assert.ok(out.content[0].text.includes('useState(initialState)'));
   } finally { await client.close(); }
 });
+
+test('javascript rendering works out of the box', async () => {
+  const { read, closeBrowser } = await import('../dist/index.js');
+  try {
+    const { markdown, result } = await read('https://react.dev/reference/react/useState', { tiers: ['chromium'] });
+    assert.equal(result.tier, 'chromium');
+    assert.ok(markdown.includes('useState'));
+  } finally { await closeBrowser(); }
+});
