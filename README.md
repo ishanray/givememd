@@ -11,54 +11,67 @@ what is content and what is chrome, and returns markdown that keeps the facts an
 a page's app state become tables, menus and cookie banners disappear, and walled pages are reported as walled instead of
 being passed off as content.
 
-## Install
+## Requirements
 
-**Python**
-```sh
-pip install givememd                       # core: fetch + extract
-pip install "givememd[browser]"            # + headless Chromium tier
-python -m playwright install chromium-headless-shell
-pip install "givememd[mcp]"                # + MCP server for Claude / other agents
-```
+givememd ships for both **Python 3.10+** and **Node 20+**; pick one. Both run on macOS (Intel and Apple silicon),
+Linux (x86-64 and ARM, glibc and musl) and Windows (x64 and ARM). No compiler, browser, API key or account is needed:
+the one native component (a browser-fingerprint HTTP client: curl_cffi in Python, impit in Node) installs as a prebuilt
+binary. The core install covers most pages. The optional extras below read more of the rest:
 
-**Node** (a TypeScript port with byte-for-byte parity tests; see [js/README.md](js/README.md))
-```sh
-npx givememd https://example.com
-claude mcp add givememd -- npx -y givememd-mcp
-```
+| For | Python | Node |
+|---|---|---|
+| Core: fetch + extract | `pip install givememd` | `npm i givememd` (or no install: `npx givememd <url>`) |
+| JavaScript-heavy pages and harder bot walls (headless Chromium) | `pip install "givememd[browser]"` | `npm i playwright-core` |
+| …then, once, for either (~100–150 MB) | `python -m playwright install chromium-headless-shell` | `npx playwright install chromium-headless-shell` |
+| Use from Claude and other agents (MCP) | `pip install "givememd[mcp]"` | included |
+| A faster middle tier: [Lightpanda](https://github.com/lightpanda-io/browser) (AGPL, not bundled) | set `GIVEMEMD_LIGHTPANDA=/path/to/lightpanda` | same |
 
-Optional: [Lightpanda](https://github.com/lightpanda-io/browser), a fast headless browser, as a middle tier. Install it
-separately (it is AGPL-licensed and not bundled) and set `GIVEMEMD_LIGHTPANDA=/path/to/lightpanda`.
+Without the browser extras, pages that need JavaScript come back as `needs_js` or `blocked` instead of being read.
+
+**Your connection is the fetcher.** Run locally (CLI, library or MCP server), every request comes from your machine and
+your IP, which reads more of the web than a datacenter does. Nothing needs configuring. The optional settings are
+`GIVEMEMD_ALLOWED_PORTS` (default `80,443`), `GIVEMEMD_MAX_BYTES` (default 15 MB) and, in Node,
+`GIVEMEMD_STRICT_SSRF=1`. A public server needs more; see [SECURITY.md](SECURITY.md).
 
 ## Use
 
 **CLI**
 ```sh
-givememd https://react.dev/reference/react/useState          # markdown to stdout
+givememd https://react.dev/reference/react/useState          # markdown to stdout   (Node: npx givememd ...)
 givememd amazon.com/dp/B0D1XD1ZV3 --no-links --trace          # trace shows which fetch tier was needed
 ```
 
 **MCP** (runs on your machine, so pages are fetched from your own connection)
 ```sh
-claude mcp add givememd -- uvx --from 'givememd[mcp]' givememd-mcp
+claude mcp add givememd -- npx -y givememd-mcp                         # Node
+claude mcp add givememd -- uvx --from 'givememd[mcp]' givememd-mcp     # Python
 ```
-It exposes one tool, `read_url(url, links=True)`.
+It exposes one tool, `read_url(url, links)`.
 
-**HTTP server** (the `givememd.com/<url>` shape)
+**HTTP server** (the `givememd.com/<url>` shape, for local use)
 ```sh
 givememd-server --port 8787
 curl http://127.0.0.1:8787/en.wikipedia.org/wiki/Markdown
 curl "http://127.0.0.1:8787/https://react.dev/reference/react/useState?links=0"
 ```
-Responses carry `X-Givememd-Tier`, `X-Givememd-Tokens`, `X-Givememd-Source` and `X-Givememd-Partial`.
-The bundled server is for local use; see [SECURITY.md](SECURITY.md) before exposing anything publicly.
+Responses carry `X-Givememd-Tier`, `X-Givememd-Source` and `X-Givememd-Partial`; the Python server also sends
+`X-Givememd-Tokens`. See [SECURITY.md](SECURITY.md) before exposing anything publicly.
 
-**Python**
+**Library**
 ```python
 from givememd import read
 md, result = read("https://docs.python.org/3/library/pathlib.html")
 print(result.tier, md[:500])
 ```
+```js
+import { read, convert } from 'givememd';
+const { markdown, result } = await read('https://docs.python.org/3/library/pathlib.html');
+const md = convert(html, 'https://example.com/page', { links: false });   // HTML you already have
+```
+
+The Node package is a TypeScript port. CI requires byte-identical output to Python on shared fixtures, and on 300 real
+top-site pages 97% of outputs are identical. It doesn't yet include the experimental component mode; see
+[js/README.md](js/README.md).
 
 ## How it works
 
@@ -107,7 +120,12 @@ pytest -m live                  # end-to-end: CLI, HTTP server and MCP over stdi
 python bench/fetch_pages.py     # build the local page cache (other sites' pages are never committed)
 python bench/regress.py         # answer-key recall and tokens on 25 pages
 python eval/run.py -v           # 19 hand-labeled pages: content lost, junk leaked, fields, component labels
+
+cd js && npm ci
+npm test                        # unit tests + byte-for-byte parity with the Python goldens
+npm run test:live               # end-to-end: CLI, HTTP server and MCP over stdio
 ```
+A change to extraction or detection must land in both `givememd/` and `js/src/`; `js/parity/` has the comparison tools.
 The large benchmark (top, smaller and indie sites against competitors) lives in `bench/top/`; see
 [docs/BENCHMARK.md](docs/BENCHMARK.md). Contributions are welcome; see [CONTRIBUTING.md](CONTRIBUTING.md).
 
