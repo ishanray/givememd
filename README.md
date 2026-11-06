@@ -1,3 +1,5 @@
+<p align="center"><img src="docs/banner.png" alt="givememd: a page full of scripts, ads, popups and cookie banners goes in; only the content comes out as markdown" width="100%"></p>
+
 # givememd
 
 Turn any web page into clean, token-lean markdown for LLMs.
