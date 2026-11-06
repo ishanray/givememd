@@ -1,0 +1,18 @@
+name: publish-pypi
+# Uploads the Python package to PyPI with Trusted Publishing (no token stored anywhere).
+# Run it from the Actions tab or: gh workflow run publish-pypi.yml
+on:
+  workflow_dispatch:
+  release:
+    types: [published]
+jobs:
+  pypi:
+    runs-on: ubuntu-latest
+    environment: pypi
+    permissions:
+      id-token: write        # lets PyPI verify this run came from ishanray/givememd
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - run: uv build
+      - run: uv publish --trusted-publishing always
