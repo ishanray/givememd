@@ -397,3 +397,11 @@ def test_non_standard_ports_refused():
 
 def test_bare_domain_normalized():
     assert normalize('/amazon.com/dp/B0D1XD1ZV3') == 'https://amazon.com/dp/B0D1XD1ZV3'
+
+
+def test_image_only_structured_data_is_not_summarized_or_tabled():
+    html = ('<html><head><script type="application/ld+json">[{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Sandbox engine", "datePublished": "2026-11-04"}, {"@type": "ImageObject", "url": "https://x.com/i0.png", "caption": "Ada", "width": 512, "height": 512}, {"@type": "ImageObject", "url": "https://x.com/i1.png", "caption": "Bo", "width": 535, "height": 535}, {"@type": "ImageObject", "url": "https://x.com/i2.png", "caption": "Cy", "width": 500, "height": 500}, {"@type": "ImageObject", "url": "https://x.com/i3.png", "caption": "Hero image", "width": 1920, "height": 1920}, {"@type": "Person", "name": "Ada Lee", "jobTitle": "CTO"}, {"@type": "Person", "name": "Bo Kim", "jobTitle": "Engineer"}, {"@type": "Person", "name": "Cy Diaz", "jobTitle": "Engineer"}]</script></head>'
+            '<body><main><h1>Sandbox engine</h1><p>' + 'MicroVMs isolate each sandbox. ' * 20 + '</p></main></body></html>')
+    md = convert(html, 'https://x.com/post', links=False)
+    assert 'ImageObject' not in md and '| width' not in md and '1920' not in md
+    assert 'Person (3): Ada Lee; Bo Kim; Cy Diaz' in md

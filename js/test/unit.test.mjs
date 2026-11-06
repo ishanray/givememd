@@ -115,3 +115,11 @@ test('browser download can be disabled', () => {
   try { assert.throws(() => installHeadlessShell(), /GIVEMEMD_NO_BROWSER_DOWNLOAD/); }
   finally { delete process.env.GIVEMEMD_NO_BROWSER_DOWNLOAD; }
 });
+
+test('image-only structured data is not summarized or tabled', () => {
+  const html = '<html><head><script type="application/ld+json">[{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Sandbox engine", "datePublished": "2026-11-04"}, {"@type": "ImageObject", "url": "https://x.com/i0.png", "caption": "Ada", "width": 512, "height": 512}, {"@type": "ImageObject", "url": "https://x.com/i1.png", "caption": "Bo", "width": 535, "height": 535}, {"@type": "ImageObject", "url": "https://x.com/i2.png", "caption": "Cy", "width": 500, "height": 500}, {"@type": "ImageObject", "url": "https://x.com/i3.png", "caption": "Hero image", "width": 1920, "height": 1920}, {"@type": "Person", "name": "Ada Lee", "jobTitle": "CTO"}, {"@type": "Person", "name": "Bo Kim", "jobTitle": "Engineer"}, {"@type": "Person", "name": "Cy Diaz", "jobTitle": "Engineer"}]</script></head>'
+    + '<body><main><h1>Sandbox engine</h1><p>' + filler('MicroVMs isolate each sandbox. ', 20) + '</p></main></body></html>';
+  const md = convert(html, 'https://x.com/post', { links: false });
+  assert.ok(!md.includes('ImageObject') && !md.includes('| width') && !md.includes('1920'));
+  assert.ok(md.includes('Person (3): Ada Lee; Bo Kim; Cy Diaz'));
+});

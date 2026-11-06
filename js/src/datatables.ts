@@ -72,6 +72,8 @@ function* scripts(doc: Document): Generator<[string, string, unknown]> {
   }
 }
 
+const LD_MEDIA = new Set(['ImageObject']); // a page's list of images (headshots, hero) is not data worth a table
+
 export function candidates(doc: Document): Cand[] {
   const groups = new Map<string, Record<string, unknown>[]>();
   const add = (path: string, recs: Record<string, unknown>[]) => {
@@ -95,6 +97,7 @@ export function candidates(doc: Document): Cand[] {
       const objs = Array.isArray(j) ? j : isDict(j) ? ((j['@graph'] as unknown[]) ?? [j]) : [];
       for (const o of objs) if (isDict(o) && o['@type']) {
         const t = pyType(o['@type']);
+        if (LD_MEDIA.has(t)) continue;
         if (!ldByType.has(t)) ldByType.set(t, []);
         ldByType.get(t)!.push(o);
       }

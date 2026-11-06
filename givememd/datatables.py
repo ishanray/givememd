@@ -92,6 +92,9 @@ def _scripts(t):
             except Exception: pass
 
 
+LD_MEDIA = {'ImageObject'}       # a page's list of images (headshots, hero) is not data worth a table
+
+
 def candidates(t):
     groups, order = {}, []
 
@@ -115,7 +118,7 @@ def candidates(t):
         walk(j, src, 0)
         if 'ld+json' in typ:
             for o in (j if isinstance(j, list) else j.get('@graph', [j]) if isinstance(j, dict) else []):
-                if isinstance(o, dict) and o.get('@type'):
+                if isinstance(o, dict) and o.get('@type') and str(o['@type']) not in LD_MEDIA:
                     ld_by_type.setdefault(str(o['@type']), []).append(o)
     # repeated top-level JSON-LD entities: join the ones describing the same thing (same url) into one record
     by_url = {}

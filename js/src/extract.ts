@@ -277,8 +277,9 @@ function ldLines(ld: Record<string, unknown>[], meta: Record<string, string>): s
       if (flat.size && !(flat.size === 1 && flat.has('name'))) flats.push(flat);
     }
     if (flats.length >= 3) {
-      const names = flats.map((f) => f.get('name') || f.get('headline') || '');
-      lines.push(`${typ} (${flats.length}): ` + names.slice(0, 3).filter(Boolean).join('; ') + (flats.length > 3 ? '; …' : ''));
+      const names = flats.map((f) => f.get('name') || f.get('headline') || '').filter(Boolean);
+      if (names.length) // a bare count ("ImageObject (4): ; …") tells a model nothing
+        lines.push(`${typ} (${flats.length}): ` + names.slice(0, 3).join('; ') + (flats.length > 3 ? '; …' : ''));
     } else {
       for (const f of flats) lines.push(`${typ}: ` + [...f].slice(0, 8).map(([k, v]) => `${k}=${v}`).join('; '));
     }

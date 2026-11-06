@@ -342,8 +342,9 @@ def ld_lines(ld, meta):
                     and not isinstance(v, bool) and not str(v).startswith('http') and len(str(v)) < 200 and key(v) not in known}
             if flat and not (len(flat) == 1 and 'name' in flat): flats.append(flat)
         if len(flats) >= 3:
-            names = [f.get('name') or f.get('headline') or '' for f in flats]
-            lines.append(f'{typ} ({len(flats)}): ' + '; '.join(n for n in names[:3] if n) + ('; …' if len(flats) > 3 else ''))
+            names = [n for n in (f.get('name') or f.get('headline') or '' for f in flats) if n]
+            if names:                   # a bare count ("ImageObject (4): ; …") tells a model nothing
+                lines.append(f'{typ} ({len(flats)}): ' + '; '.join(names[:3]) + ('; …' if len(flats) > 3 else ''))
         else:
             lines += [f'{typ}: ' + '; '.join(f'{k}={v}' for k, v in list(f.items())[:8]) for f in flats]
     return lines
