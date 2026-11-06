@@ -37,6 +37,7 @@
   ],
   "scripts": {
     "build": "tsc -p tsconfig.json",
+    "prepare": "npm run build",
     "test": "npm run build && node --test test/unit.test.mjs test/parity.test.mjs",
     "prepublishOnly": "npm test",
     "test:live": "npm run build && node --test test/live.test.mjs"

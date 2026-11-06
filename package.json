@@ -1,0 +1,10 @@
+{
+  "name": "givememd-repo",
+  "private": true,
+  "description": "Repository root: `npm install` here installs and builds the Node package in js/.",
+  "workspaces": ["js"],
+  "scripts": {
+    "test": "npm test -w js",
+    "test:live": "npm run test:live -w js"
+  }
+}

@@ -19,6 +19,12 @@ Linux (x86-64 and ARM, glibc and musl) and Windows (x64 and ARM). No compiler, A
 ```sh
 pip install givememd        # or: npm i givememd   (or no install: npx givememd <url>)
 ```
+Or straight from a clone of this repository, with the normal install for either language:
+```sh
+git clone https://github.com/ishanray/givememd && cd givememd
+pip install .               # Python, then: givememd <url>
+npm install                 # Node (installs and builds js/), then: npx givememd <url>
+```
 
 **JavaScript-heavy pages work out of the box.** Most pages are read with one plain request: 86% of the top sites we
 could read, and 92% of smaller sites. Apps like Reddit, Amazon's homepage or character.ai need a real browser, and
@@ -125,7 +131,7 @@ python bench/fetch_pages.py     # build the local page cache (other sites' pages
 python bench/regress.py         # answer-key recall and tokens on 25 pages
 python eval/run.py -v           # 19 hand-labeled pages: content lost, junk leaked, fields, component labels
 
-cd js && npm ci
+npm ci                          # at the repo root; builds the Node package in js/
 npm test                        # unit tests + byte-for-byte parity with the Python goldens
 npm run test:live               # end-to-end: CLI, HTTP server and MCP over stdio
 ```
