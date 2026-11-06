@@ -142,5 +142,5 @@ The large benchmark (top, smaller and indie sites against competitors) lives in 
 
 ## License
 
-Apache-2.0. Lightpanda (AGPL) and Chromium are optional and installed separately; Jev is an optional third-party API.
+MIT. Lightpanda (AGPL) and Chromium are optional and installed separately; Jev is an optional third-party API.
 Product names in the benchmark belong to their owners.

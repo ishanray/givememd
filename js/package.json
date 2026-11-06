@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Put givememd in front of any URL and get clean, token-lean markdown for LLMs.",
   "type": "module",
-  "license": "Apache-2.0",
+  "license": "MIT",
   "keywords": [
     "markdown",
     "llm",

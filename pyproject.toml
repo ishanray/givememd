@@ -8,7 +8,7 @@ version = "0.1.0"
 description = "Put givememd in front of any URL and get clean, token-lean markdown for LLMs."
 readme = "README.md"
 requires-python = ">=3.10"
-license = "Apache-2.0"
+license = "MIT"
 license-files = ["LICENSE"]
 keywords = ["markdown", "llm", "web", "scraping", "html-to-markdown", "mcp", "agents"]
 classifiers = [

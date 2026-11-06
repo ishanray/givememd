@@ -56,4 +56,4 @@ See the repository README for details and benchmarks.
   print as `2`.
 
 ## License
-Apache-2.0
+MIT
