@@ -26,6 +26,13 @@ const RC_CALL = /\$R[CS]\(\s*"([^"]+)"\s*,\s*"([^"]+)"/g;
 const HIDE_CLASS = /(^|\s)(w-form-fail|w-form-done)(\s|$)/;
 const SHOWN_AT = /(^|\s)(sm|md|lg|xl|2xl):(block|flex|grid|inline|inline-block|table|contents)(\s|$)|(^|\s)d-(sm|md|lg|xl)-(block|flex|inline)/;
 const HEADLINE_MARK = '⁣';
+// Inline elements are padded with a soft space so '<b>A</b><b>B</b>' reads 'A B'. The pad is dropped next to
+// punctuation the page wrote directly against the element: '<em>it</em>.' -> 'it.', '(<a>x</a>)' -> '(x)'.
+const SOFT = '\x01';
+const SOFT_BEFORE = /\x01+(?=[.,;:!?)\]}%]|['\u2019]s(?![\p{L}\p{N}_]))/gu;
+const SOFT_AFTER = /(?<=[(\[{])\x01+/gu;
+const unsoft = (s: string): string => s.replace(SOFT_BEFORE, '').replace(SOFT_AFTER, '').replaceAll(SOFT, ' ');
+const itext = (n: AnyNode): string => ws(unsoft(text(n, SOFT)));   // an element's text as one rendered line
 const HEADLINE_WORDS = 4, HEADLINE_MAX = 30;
 const OUTSIDE_SKIP = 'nav,footer,aside,header,form,dialog,[role="dialog"],[role="navigation"],[role="banner"],[role="contentinfo"],[aria-hidden="true"]';
 
@@ -93,7 +100,7 @@ function under(n: AnyNode, ids: Set<AnyNode>): boolean {
 function headlines(n: Element): string[] {
   const out: string[] = [];
   for (const a of css(n, 'a')) {
-    const t = ws(text(a, ' '));
+    const t = itext(a);
     if (t.split(/\s+/u).filter(Boolean).length >= HEADLINE_WORDS && t.length <= 160 && !UI_TEXT.test(t) && !out.includes(t)) out.push(t);
   }
   return out.length >= 2 ? out.slice(0, HEADLINE_MAX) : [];
@@ -137,7 +144,7 @@ class MD {
   constructor(public base: string) {}
 
   flush(prefix = ''): void {
-    const s = ws(this.buf.join(''));
+    const s = ws(unsoft(this.buf.join('')));
     this.buf = [];
     if (s.includes(HEADLINE_MARK)) {
       s.split(HEADLINE_MARK).forEach((raw, i) => {
@@ -152,7 +159,7 @@ class MD {
   }
 
   walk(n: ParentNode, listDepth = 0): void {
-    if (this.depth >= MD.MAX_DEPTH) { this.buf.push(' ' + text(n, ' ') + ' '); return; }
+    if (this.depth >= MD.MAX_DEPTH) { this.buf.push(SOFT + text(n, SOFT) + SOFT); return; }
     this.depth += 1;
     try { for (const c of children(n)) this.handle(c, listDepth); } finally { this.depth -= 1; }
   }
@@ -163,7 +170,7 @@ class MD {
     if (t === '-other') return;
     const el = c as Element;
     if (/^h[1-6]$/.test(t)) {
-      this.flush(); const s = ws(text(el, ' '));
+      this.flush(); const s = itext(el);
       if (s) this.blocks.push('#'.repeat(Number(t[1])) + ' ' + s);
     } else if (t === 'pre') {
       this.flush(); this.blocks.push('```\n' + text(el).replace(/^\n+|\n+$/g, '') + '\n```');
@@ -175,11 +182,11 @@ class MD {
     } else if (t === 'ul' || t === 'ol') {
       this.flush(); this.walk(el, listDepth + 1); this.flush();
     } else if (t === 'a') {
-      const s = ws(text(el, ' '));
+      const s = itext(el);
       const href = attr(el, 'href');
       const u = href ? cleanUrl(href, this.base) : null;
       if (s && u && s.length > 3) this.links.push([s, u]);
-      this.buf.push(' ' + s + ' ');
+      this.buf.push(SOFT + s + SOFT);
     } else if (t === 'code') {
       const s = text(el);
       this.buf.push(s.trim() ? '`' + s + '`' : '');
@@ -188,7 +195,7 @@ class MD {
       this.walk(el, listDepth); this.flush();
       if (CARD_TAGS.has(t)) this.mergeCard(start);
     } else {
-      this.buf.push(' '); this.walk(el, listDepth); this.buf.push(' ');
+      this.buf.push(SOFT); this.walk(el, listDepth); this.buf.push(SOFT);
     }
   }
 
@@ -203,7 +210,7 @@ class MD {
   }
 
   table(tbl: Element): void {
-    let rows = css(tbl, 'tr').map((tr) => css(tr, 'th,td').map((td) => ws(text(td, ' ')).replaceAll('|', '/')));
+    let rows = css(tbl, 'tr').map((tr) => css(tr, 'th,td').map((td) => itext(td).replaceAll('|', '/')));
     rows = rows.filter((r) => r.some(Boolean));
     if (!rows.length) return;
     const w = Math.max(...rows.map((r) => r.length));

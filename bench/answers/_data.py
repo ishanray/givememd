@@ -25,7 +25,8 @@ PAGES = {  # name -> URL the page was fetched from
 def norm(s):
     s = str(s).lower().replace('‎', '').replace('‏', '').replace(' ', ' ').replace('\xa0', ' ')
     s = re.sub(r'[\\*_`#|>\[\],"/]', ' ', s)
-    return re.sub(r'\s+', ' ', s).strip()
+    s = re.sub(r'\s+', ' ', s).strip()
+    return re.sub(r'\( ', '(', re.sub(r' (?=[.,;:!?)%\'’])', '', s))   # 'it .' and 'it.' are the same fact
 
 
 from .cache import html  # noqa: E402

@@ -30,6 +30,13 @@ BLOCK = {'p', 'div', 'section', 'article', 'main', 'header', 'ul', 'ol', 'li', '
 TRACKING = re.compile(r'^(utm_|ref_?$|pd_rd|pf_rd|content-id|_encoding|psc$|qid$|sr$|crid$|sprefix|dib|th$|trk|fbclid|gclid|mc_|_ga)', re.I)
 
 ws = lambda s: re.sub(r'\s+', ' ', s).strip()
+# Inline elements are padded with a soft space so '<b>A</b><b>B</b>' reads 'A B'. The pad is dropped next to
+# punctuation the page wrote directly against the element: '<em>it</em>.' -> 'it.', '(<a>x</a>)' -> '(x)'.
+SOFT = '\x01'
+SOFT_BEFORE = re.compile(SOFT + r'+(?=[.,;:!?)\]}%]|[\'\u2019]s(?!\w))')
+SOFT_AFTER = re.compile(r'(?<=[(\[{])' + SOFT + '+')
+unsoft = lambda s: SOFT_AFTER.sub('', SOFT_BEFORE.sub('', s)).replace(SOFT, ' ')
+itext = lambda n: ws(unsoft(n.text(separator=SOFT)))   # an element's text as one rendered line
 
 
 def clean_url(href, base):
@@ -148,7 +155,7 @@ def headlines(n):
     """Link texts in a link-dense block that read like headlines or product names (4+ words), not menu labels."""
     out = []
     for a in n.css('a'):
-        t = ws(a.text(separator=' '))
+        t = itext(a)
         if len(t.split()) >= HEADLINE_WORDS and len(t) <= 160 and not UI_TEXT.match(t) and t not in out:
             out.append(t)
     return out[:HEADLINE_MAX] if len(out) >= 2 else []
@@ -197,7 +204,7 @@ class MD:
         self.headline_blocks = set()  # their block indexes, so repeats can be trimmed once the page is assembled
 
     def flush(self, prefix=''):
-        s = ws(''.join(self.buf))
+        s = ws(unsoft(''.join(self.buf)))
         self.buf = []
         if HEADLINE_MARK in s:         # a compacted headline line always stands alone
             for i, part in enumerate(s.split(HEADLINE_MARK)):
@@ -210,7 +217,7 @@ class MD:
 
     def walk(self, n, list_depth=0):
         if self.depth >= self.MAX_DEPTH:
-            self.buf.append(' ' + n.text(separator=' ') + ' ')
+            self.buf.append(SOFT + n.text(separator=SOFT) + SOFT)
             return
         self.depth += 1
         try:
@@ -227,7 +234,7 @@ class MD:
             if tag == '-comment':       # React's <!-- --> text separators: no space ("29<!-- -->g" renders as "29g")
                 return
             if tag in ('h1', 'h2', 'h3', 'h4', 'h5', 'h6'):
-                self.flush(); s = ws(c.text(separator=' '))
+                self.flush(); s = itext(c)
                 if s: self.blocks.append('#' * int(tag[1]) + ' ' + s)
             elif tag == 'pre':
                 self.flush(); self.blocks.append('```\n' + c.text().strip('\n') + '\n```')
@@ -240,11 +247,11 @@ class MD:
             elif tag in ('ul', 'ol'):
                 self.flush(); self.walk(c, list_depth + 1); self.flush()
             elif tag == 'a':
-                s = ws(c.text(separator=' '))
+                s = itext(c)
                 href = c.attributes.get('href')
                 u = href and clean_url(href, self.base)
                 if s and u and len(s) > 3: self.links.append((s, u))
-                self.buf.append(' ' + s + ' ')
+                self.buf.append(SOFT + s + SOFT)
             elif tag == 'code':
                 s = c.text()
                 self.buf.append(f'`{s}`' if s.strip() else '')
@@ -253,7 +260,7 @@ class MD:
                 self.walk(c, list_depth); self.flush()
                 if tag in CARD_TAGS: self.merge_card(start)
             else:
-                self.buf.append(' '); self.walk(c, list_depth); self.buf.append(' ')
+                self.buf.append(SOFT); self.walk(c, list_depth); self.buf.append(SOFT)
 
     def merge_card(self, start, prefix=''):
         """'$449,000' / '- 4 bds' / '- 3 ba' / '8709 Blaze Dr' -> '$449,000 · 4 bds · 3 ba · 8709 Blaze Dr'.
@@ -266,7 +273,7 @@ class MD:
         self.blocks[start:] = [prefix + ' · '.join(items)] if items else []
 
     def table(self, tbl):
-        rows = [[ws(td.text(separator=' ')).replace('|', '/') for td in tr.css('th,td')] for tr in tbl.css('tr')]
+        rows = [[itext(td).replace('|', '/') for td in tr.css('th,td')] for tr in tbl.css('tr')]
         rows = [r for r in rows if any(r)]
         if not rows: return
         if max(len(r) for r in rows) == 2:          # key/value table -> compact lines

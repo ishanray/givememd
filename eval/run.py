@@ -51,7 +51,8 @@ UI_PROBE = re.compile(r'(?i)^(#+ |- )?(loading|image (un)?available|double tap|s
 def norm(s):
     s = str(s).lower().replace('\u200e', '').replace('\xa0', ' ').replace('&amp;', '&')
     s = re.sub(r'[\\*_`#|>\[\],"/·]', ' ', s)
-    return re.sub(r'\s+', ' ', s).strip()
+    s = re.sub(r'\s+', ' ', s).strip()
+    return re.sub(r'\( ', '(', re.sub(r' (?=[.,;:!?)%\'’])', '', s))   # 'it .' and 'it.' are the same fact
 
 
 def load(name):

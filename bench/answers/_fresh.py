@@ -14,7 +14,8 @@ from .cache import html as raw
 def norm(s):
     s = s.lower().replace('‎', '').replace('‏', '').replace('&amp;', '&')
     s = re.sub(r'[\\*_`#|>\[\]¶]', ' ', s)
-    return re.sub(r'\s+', ' ', s).strip()
+    s = re.sub(r'\s+', ' ', s).strip()
+    return re.sub(r'\( ', '(', re.sub(r' (?=[.,;:!?)%\'’])', '', s))   # 'it .' and 'it.' are the same fact
 
 def txt(n): return n.text(separator=' ', strip=True)
 def lds(t):

@@ -220,6 +220,13 @@ def test_html_comments_add_no_space():
     assert 'fat 29g' in md and '29 g' not in md
 
 
+def test_no_space_before_punctuation_after_inline_elements():
+    md = convert('<main><h2>Title <em>here</em>!</h2><p>' + 'It was <em>already validated it</em>. See <a href="/r">the report</a>, and (<a href="/l">Linux</a>) and <a href="/v">Vercel</a>\'s team. <span>A</span><span>B</span>. ' * 12 + '</p><table><tr><th>Date</th><th>Event</th></tr><tr><td>Oct 7</td><td>accepted into <code>net.git</code>.</td></tr></table><ul><li><a href="/c"><code>fix</code> (<code>abc123</code>)</a></li></ul></main>', 'https://x.com', links=False)
+    for s in ['validated it.', 'the report,', '(Linux)', "Vercel's", 'A B.', '## Title here!', 'net.git.', 'fix (abc123)']:
+        assert s in md, s
+    assert ' .' not in md and ' ,' not in md
+
+
 def test_system_browser_prefers_env_then_installed(monkeypatch, tmp_path):
     import importlib; F = importlib.import_module('givememd.fetch')
     monkeypatch.setenv('GIVEMEMD_CHROME', '/opt/my/chrome')

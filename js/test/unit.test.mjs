@@ -68,6 +68,12 @@ test('comments add no space', () => {
   assert.ok(md.includes('fat 29g') && !md.includes('29 g'));
 });
 
+test('no space before punctuation after inline elements', () => {
+  const md = convert('<main><h2>Title <em>here</em>!</h2><p>' + filler('It was <em>already validated it</em>. See <a href="/r">the report</a>, and (<a href="/l">Linux</a>) and <a href="/v">Vercel</a>\'s team. <span>A</span><span>B</span>. ', 12) + '</p><table><tr><th>Date</th><th>Event</th></tr><tr><td>Oct 7</td><td>accepted into <code>net.git</code>.</td></tr></table><ul><li><a href="/c"><code>fix</code> (<code>abc123</code>)</a></li></ul></main>', 'https://x.com', { links: false });
+  for (const s of ['validated it.', 'the report,', '(Linux)', "Vercel's", 'A B.', '## Title here!', 'net.git.', 'fix (abc123)']) assert.ok(md.includes(s), s);
+  assert.ok(!md.includes(' .') && !md.includes(' ,'));
+});
+
 test('deep nesting does not crash', () => {
   const html = '<main>' + '<span>'.repeat(3000) + 'deep text here' + '</span>'.repeat(3000) + '<p>' + filler('body ', 100) + '</p></main>';
   assert.ok(convert(html, 'https://x.com', { links: false }).includes('deep text here'));
