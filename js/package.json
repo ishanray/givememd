@@ -34,9 +34,9 @@
     }
   },
   "bin": {
-    "givememd": "./dist/cli.js",
-    "givememd-mcp": "./dist/mcp.js",
-    "givememd-server": "./dist/server.js"
+    "givememd": "dist/cli.js",
+    "givememd-mcp": "dist/mcp.js",
+    "givememd-server": "dist/server.js"
   },
   "files": [
     "dist",
