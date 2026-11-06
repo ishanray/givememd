@@ -1,4 +1,4 @@
-<p align="center"><img src="docs/banner.png" alt="givememd: a page full of scripts, ads, popups and cookie banners goes in; only the content comes out as markdown" width="100%"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/ishanray/givememd/main/docs/banner.png" alt="givememd: a page full of scripts, ads, popups and cookie banners goes in; only the content comes out as markdown" width="100%"></p>
 
 # givememd
 
@@ -43,7 +43,7 @@ Using it from Claude or other agents (MCP) needs `pip install "givememd[mcp]"` i
 **Your connection is the fetcher.** Run locally (CLI, library or MCP server), every request comes from your machine and
 your IP, which reads more of the web than a datacenter does. Nothing needs configuring. The optional settings are
 `GIVEMEMD_ALLOWED_PORTS` (default `80,443`), `GIVEMEMD_MAX_BYTES` (default 15 MB) and, in Node,
-`GIVEMEMD_STRICT_SSRF=1`. A public server needs more; see [SECURITY.md](SECURITY.md).
+`GIVEMEMD_STRICT_SSRF=1`. A public server needs more; see [SECURITY.md](https://github.com/ishanray/givememd/blob/main/SECURITY.md).
 
 ## Use
 
@@ -67,7 +67,7 @@ curl http://127.0.0.1:8787/en.wikipedia.org/wiki/Markdown
 curl "http://127.0.0.1:8787/https://react.dev/reference/react/useState?links=0"
 ```
 Responses carry `X-Givememd-Tier`, `X-Givememd-Source` and `X-Givememd-Partial`; the Python server also sends
-`X-Givememd-Tokens`. See [SECURITY.md](SECURITY.md) before exposing anything publicly.
+`X-Givememd-Tokens`. See [SECURITY.md](https://github.com/ishanray/givememd/blob/main/SECURITY.md) before exposing anything publicly.
 
 **Library**
 ```python
@@ -83,7 +83,7 @@ const md = convert(html, 'https://example.com/page', { links: false });   // HTM
 
 The Node package is a TypeScript port. CI requires byte-identical output to Python on shared fixtures, and on 300 real
 top-site pages 97% of outputs are identical. It doesn't yet include the experimental component mode; see
-[js/README.md](js/README.md).
+[js/README.md](https://github.com/ishanray/givememd/blob/main/js/README.md).
 
 ## How it works
 
@@ -110,7 +110,7 @@ top-site pages 97% of outputs are identical. It doesn't yet include the experime
 
 Measured on 2026-10-30 against Jina Reader (`r.jina.ai`, no key) and defuddle.md. Each tool was run on the same URLs:
 a homepage plus one inner page per site, fetched from one datacenter IP. Details and caveats are in
-[docs/BENCHMARK.md](docs/BENCHMARK.md).
+[docs/BENCHMARK.md](https://github.com/ishanray/givememd/blob/main/docs/BENCHMARK.md).
 
 | Set | URLs | givememd vs Jina (win / tie / loss) | givememd vs defuddle (win / tie / loss) | Median tokens: givememd vs Jina |
 |---|---|---|---|---|
@@ -139,7 +139,7 @@ npm run test:live               # end-to-end: CLI, HTTP server and MCP over stdi
 ```
 A change to extraction or detection must land in both `givememd/` and `js/src/`; `js/parity/` has the comparison tools.
 The large benchmark (top, smaller and indie sites against competitors) lives in `bench/top/`; see
-[docs/BENCHMARK.md](docs/BENCHMARK.md). Contributions are welcome; see [CONTRIBUTING.md](CONTRIBUTING.md).
+[docs/BENCHMARK.md](https://github.com/ishanray/givememd/blob/main/docs/BENCHMARK.md). Contributions are welcome; see [CONTRIBUTING.md](https://github.com/ishanray/givememd/blob/main/CONTRIBUTING.md).
 
 ## Roadmap
 

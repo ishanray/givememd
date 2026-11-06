@@ -1,7 +1,7 @@
 {
   "name": "givememd",
   "version": "0.1.0",
-  "description": "Put givememd in front of any URL and get clean, token-lean markdown for LLMs.",
+  "description": "Turn any web page into clean, token-lean markdown for LLMs. Fetches from your own machine.",
   "type": "module",
   "license": "MIT",
   "keywords": [
@@ -13,7 +13,15 @@
     "mcp",
     "agents"
   ],
-  "homepage": "https://givememd.com",
+  "homepage": "https://github.com/ishanray/givememd#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ishanray/givememd.git",
+    "directory": "js"
+  },
+  "bugs": {
+    "url": "https://github.com/ishanray/givememd/issues"
+  },
   "engines": {
     "node": ">=20"
   },
@@ -26,9 +34,9 @@
     }
   },
   "bin": {
-    "givememd": "./dist/cli.js",
-    "givememd-mcp": "./dist/mcp.js",
-    "givememd-server": "./dist/server.js"
+    "givememd": "dist/cli.js",
+    "givememd-mcp": "dist/mcp.js",
+    "givememd-server": "dist/server.js"
   },
   "files": [
     "dist",

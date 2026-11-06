@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "givememd"
 version = "0.1.0"
-description = "Put givememd in front of any URL and get clean, token-lean markdown for LLMs."
+description = "Turn any web page into clean, token-lean markdown for LLMs. Fetches from your own machine."
 readme = "README.md"
 requires-python = ">=3.10"
 license = "MIT"
@@ -36,7 +36,9 @@ givememd-server = "givememd.server:main"
 givememd-mcp = "givememd.mcp_server:main"
 
 [project.urls]
-Homepage = "https://givememd.com"
+Homepage = "https://github.com/ishanray/givememd"
+Repository = "https://github.com/ishanray/givememd"
+Issues = "https://github.com/ishanray/givememd/issues"
 
 [tool.hatch.build.targets.wheel]
 packages = ["givememd"]
